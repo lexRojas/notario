@@ -96,7 +96,31 @@ select > option {
 @media (width <= 1500px) {
   .input-group {
     width: 100%;
-    margin: 0;
+    margin: 5px;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 5px;
+    background-color: white;
+    border-radius: 20px;
+    border: solid gray 1px;
+    box-shadow: 0px 0px 10px black;
+    min-width: 200px;
+  }
+  .card-menu {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 5px;
+    background-color: white;
+    border-radius: 20px;
+    border: solid gray 1px;
+    box-shadow: 0px 0px 10px black;
+    min-width: 200px;
   }
 }
 .card-buttonPanel {

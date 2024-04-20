@@ -16,13 +16,13 @@ $font-size: 1rem;
 // clases personalizables 
 
 
-@mixin card ($width, $min-width){
+@mixin card ($width, $min-width, $margin){
 
    display: flex;
    flex-direction: column;
    flex-wrap: wrap;
    width: $width;
-   margin: auto;
+   margin: $margin;
    background-color: white;
    border-radius: 20px;
    border: solid gray 1px;
@@ -43,12 +43,12 @@ $font-size: 1rem;
 //clases para formularios
 
 .card{
-   @include card(30%, 200px);
+   @include card(30%, 200px, auto);
 }
 
 
 .card-menu{
-   @include card(30%, 300px);
+   @include card(30%, 300px, auto);
 }
 
 .card-item{
@@ -126,9 +126,16 @@ select>option{
 @media (width <=1500px) {
    .input-group{
        width: 100%;  
-       margin: 0;
+       margin: 5px;
        
    }
+   .card{
+      @include card(100%, 200px,5px);
+   }
+   .card-menu{
+      @include card(100%, 200px,5px);
+   }
+
 
 }
 
