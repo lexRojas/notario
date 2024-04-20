@@ -130,10 +130,10 @@ select>option{
        
    }
    .card{
-      @include card(100%, 200px,5px);
+      @include card(100%, 200px,15px);
    }
    .card-menu{
-      @include card(100%, 200px,5px);
+      @include card(100%, 200px,15px);
    }
 
 
