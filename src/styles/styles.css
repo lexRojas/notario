@@ -128,7 +128,7 @@ select > option {
   .card {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
     margin: 15px;
     margin-top: 25px;
     border: solid gray 1px;
