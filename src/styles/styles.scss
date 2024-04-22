@@ -6,8 +6,19 @@ $font-size: 1rem;
 // cuerpo general
 
 * {
+  margin: 0;
+  padding: 0;
   font-family: $font-family;
   font-size: $font-size;
+
+}
+
+
+body{
+   background-image: url('../images/justicia.jpg'); 
+   background-size: cover;
+   background-position: center;
+   height: 100vh;
 }
 
 // clases personalizables
@@ -17,19 +28,30 @@ $font-size: 1rem;
   flex-direction: column;
   width: $width;
   margin: $margin;
+  margin-top: 25px;
+  
   border: solid gray 1px;
   min-width: $min-width;
 
+  
+  background: rgba( 255, 255, 255, 0.2 );
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 2.5px );
   border-radius: 20px;
-  background: #e0e0e0;
-  box-shadow: 10px 10px 22px #9f9f9f, -10px -10px 22px #ffffff;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+
 }
 
 .contenedor {
-  background: linear-gradient(0deg, rgb(93, 102, 131), white);
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  background-color:  rgba(0, 0, 0, 0.356);
   height: 100vh;
   width: 100%;
-  margin-top: 5rem;
+  
 }
 
 //clases para formularios
@@ -49,8 +71,13 @@ $font-size: 1rem;
   text-align: center;
 }
 
+.card-item>span {
+   color: white;
+ }
+ 
+
 .card-item:hover {
-  color: red;
+  color: rgb(255, 175, 2);
 }
 
 img {
@@ -60,7 +87,7 @@ img {
 
 .card-titulo {
   text-align: center;
-  color: rgb(33, 33, 66);
+  color: rgb(255, 251, 0);
 }
 .card-cuerpo {
   display: flex;
@@ -78,6 +105,10 @@ img {
   margin: 5px;
 }
 
+
+.input-group>label {
+   color: white;
+}
 
 #flex-small {
 
@@ -133,10 +164,10 @@ select > option {
   font-weight: 600;
 
   border-radius: 14px;
-  background-color: #877ca5;
-  -webkit-box-shadow: 3px 4.5px 14px 9.5px #ffffff;
-  -moz-box-shadow: 3px 4.5px 14px 9.5px #ffffff;
-  box-shadow: 3px 4.5px 14px 9.5px #ffffff;
+  background-color: #b1b1b1;
+  -webkit-box-shadow: 3px 4.5px 10px 5px #2e2e2e;
+  -moz-box-shadow: 3px 4.5px 10px 5px #2e2e2e;
+  box-shadow: 3px 4.5px 10px 5px #2e2e2e;
 }
 
 //clases para reportes
@@ -144,6 +175,7 @@ select > option {
 .contenedor-report {
   height: 100vh;
   font-size: 5px;
+  background-color: white;
 }
 
 .logo {
