@@ -10,15 +10,13 @@ $font-size: 1rem;
   padding: 0;
   font-family: $font-family;
   font-size: $font-size;
-
 }
 
-
-body{
-   background-image: url('../images/justicia.jpg'); 
-   background-size: cover;
-   background-position: center;
-   height: 100vh;
+body {
+  background-image: url("../images/justicia.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 // clases personalizables
@@ -29,18 +27,16 @@ body{
   width: $width;
   margin: $margin;
   margin-top: 25px;
-  
+
   border: solid gray 1px;
   min-width: $min-width;
 
-  
-  background: rgba( 255, 255, 255, 0.2 );
+  background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-  backdrop-filter: blur( 3.5px );
-  -webkit-backdrop-filter: blur( 2.5px );
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(2.5px);
   border-radius: 20px;
-  border: 1px solid rgba( 255, 255, 255, 0.18 );
-
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .contenedor {
@@ -48,10 +44,9 @@ body{
   margin: 0;
   padding: 0;
   top: 0;
-  background-color:  rgba(0, 0, 0, 0.356);
+  background-color: rgba(0, 0, 0, 0.356);
   height: 100vh;
   width: 100%;
-  
 }
 
 //clases para formularios
@@ -71,10 +66,9 @@ body{
   text-align: center;
 }
 
-.card-item>span {
-   color: white;
- }
- 
+.card-item > span {
+  color: white;
+}
 
 .card-item:hover {
   color: rgb(255, 175, 2);
@@ -105,15 +99,12 @@ img {
   margin: 5px;
 }
 
-
-.input-group>label {
-   color: white;
+.input-group > label {
+  color: white;
 }
 
 #flex-small {
-
-   max-width: 100px;
-
+  max-width: 100px;
 }
 
 input {
@@ -138,12 +129,11 @@ select > option {
 }
 
 @media (width <=1000px) {
-  
   .card {
-    @include card(100%, 200px, 15px);
+    @include card(90%, 200px, 15px);
   }
   .card-menu {
-    @include card(100%, 200px, 15px);
+    @include card(90%, 200px, 15px);
   }
 }
 
@@ -153,12 +143,10 @@ select > option {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 1.5rem;
-  
 }
 
 .my-button {
-
-  flex-grow: 1; 
+  flex-grow: 1;
   margin: 10px 20px;
   padding: 1rem;
   font-weight: 600;
@@ -272,6 +260,10 @@ footer {
 }
 
 @media print {
+  body {
+    background: #fff !important;
+  }
+
   footer {
     display: none;
   }
@@ -281,4 +273,9 @@ footer {
   h2 {
     font-size: smaller;
   }
+}
+
+@page {
+  margin: 1.5cm;
+  size: 8.5in 13in landscase;
 }

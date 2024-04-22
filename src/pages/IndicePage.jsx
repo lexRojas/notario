@@ -6,6 +6,8 @@ import { useLocation, Link } from "react-router-dom";
 export const IndicePage = () => {
   const { state } = useLocation();
 
+  const fechaHoy = new Date();
+
   const mes = state.mes;
   const quincena = state.quincena;
   const year = state.year;
@@ -57,7 +59,7 @@ export const IndicePage = () => {
         <div className="firmas">
           <p className="linea"></p>
           <p>Rodrigo Rojas Chaves</p>
-          <p>fecha:05-04-2024</p>
+          <p>Fecha: {fechaHoy.toISOString().substring(0,10) }</p>
         </div>
       </div>
       <footer>

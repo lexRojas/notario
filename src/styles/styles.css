@@ -274,6 +274,9 @@ footer {
 }
 
 @media print {
+  body {
+    background: #fff !important;
+  }
   footer {
     display: none;
   }
@@ -283,4 +286,8 @@ footer {
   h2 {
     font-size: smaller;
   }
+}
+@page {
+  margin: 1.5cm;
+  size: 8.5in 13in landscase;
 }/*# sourceMappingURL=styles.css.map */
