@@ -13,27 +13,25 @@
 .card {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 30%;
+  width: 55%;
   margin: auto;
-  background-color: white;
-  border-radius: 20px;
   border: solid gray 1px;
-  box-shadow: 0px 0px 10px black;
-  min-width: 200px;
+  min-width: 350px;
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 10px 10px 22px #9f9f9f, -10px -10px 22px #ffffff;
 }
 
 .card-menu {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   width: 30%;
   margin: auto;
-  background-color: white;
-  border-radius: 20px;
   border: solid gray 1px;
-  box-shadow: 0px 0px 10px black;
   min-width: 300px;
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 10px 10px 22px #9f9f9f, -10px -10px 22px #ffffff;
 }
 
 .card-item {
@@ -66,10 +64,15 @@ img {
 }
 
 .input-group {
-  width: 30%;
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
+  flex-basis: 250px;
   margin: 5px;
+}
+
+#flex-small {
+  max-width: 100px;
 }
 
 input {
@@ -93,48 +96,46 @@ select > option {
   margin: 5px;
 }
 
-@media (width <= 1500px) {
-  .input-group {
-    width: 100%;
-    margin: 5px;
-  }
+@media (width <= 1000px) {
   .card {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 100%;
     margin: 15px;
-    background-color: white;
-    border-radius: 20px;
     border: solid gray 1px;
-    box-shadow: 0px 0px 10px black;
     min-width: 200px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 10px 10px 22px #9f9f9f, -10px -10px 22px #ffffff;
   }
   .card-menu {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 100%;
     margin: 15px;
-    background-color: white;
-    border-radius: 20px;
     border: solid gray 1px;
-    box-shadow: 0px 0px 10px black;
     min-width: 200px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 10px 10px 22px #9f9f9f, -10px -10px 22px #ffffff;
   }
 }
 .card-buttonPanel {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin-bottom: 1.5rem;
 }
 
 .my-button {
+  flex-grow: 1;
+  margin: 10px 20px;
   padding: 1rem;
-  border-radius: 1rem;
-  background-color: rgb(162, 195, 255);
-  box-shadow: 0px 0px 3px black;
   font-weight: 600;
+  border-radius: 14px;
+  background-color: #877ca5;
+  box-shadow: 3px 4.5px 14px 9.5px #ffffff;
 }
 
 .contenedor-report {
@@ -183,7 +184,8 @@ thead {
   background-color: rgb(255, 251, 0);
 }
 
-th, td {
+th,
+td {
   text-align: center;
   vertical-align: middle;
   border: 1px solid #000;

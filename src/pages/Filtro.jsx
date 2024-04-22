@@ -76,7 +76,7 @@ export const Filtro = () => {
                 </select>
             </div>
 
-            <div className="input-group">
+            <div className="input-group" id="flex-small">
                 <label htmlFor="año">Año</label>
                 <input type="number" defaultValue={y} ref ={year} name="año" id="ano" />
             </div>
