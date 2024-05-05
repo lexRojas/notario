@@ -11,7 +11,7 @@ export const TablaTarifas = (props) => {
   useEffect(() => {
     if (calcular) {
       axios
-        .get("http://18.222.180.241:8000/get_monto", {
+        .get("https://18.222.180.241:8000/get_monto", {
           params: { id_acto: id_acto, monto: monto },
         })
         .then((res) => {

@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const TablaIndice = (props) => {
   const [datos, setdatos] = useState([]);
-  const URL = "http://18.222.180.241:8000/";
+  const URL = "https://18.222.180.241:8000/";
 
   let { fechaInicio } = props;
   let { fechaFinal } = props;

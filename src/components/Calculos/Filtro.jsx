@@ -17,7 +17,7 @@ const Filtro = (props) => {
 
   const get_actos = (id_registro) => {
     axios
-      .get("http://18.222.180.241:8000/actos", {
+      .get("https://18.222.180.241:8000/actos", {
         params: { idRegistro: id_registro },
       })
       .then((res) => {
@@ -46,7 +46,7 @@ const Filtro = (props) => {
     
 
   useEffect(() => {
-    axios.get("http://18.222.180.241:8000/registros").then((res) => {
+    axios.get("https://18.222.180.241:8000/registros").then((res) => {
       setRegistros(res.data);
       get_actos(1);
     });
