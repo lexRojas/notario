@@ -3,6 +3,9 @@ import calculosIco from "./images/calculos.svg";
 import { Link } from "react-router-dom";
 
 function App() {
+
+
+
   return (
     <div className="contenedor">
       <div className="card-menu">
@@ -18,7 +21,7 @@ function App() {
             <span>Indice</span>
           </div>
           <div className="card-item">
-            <Link to='/' > 
+            <Link to='/calculos' > 
               <img src={calculosIco} alt="Calculos" >
 
                 

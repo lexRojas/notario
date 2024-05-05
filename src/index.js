@@ -10,6 +10,7 @@ import './styles/styles.css'
 import App from './App';
 import { Filtro } from './pages/Filtro';
 import {IndicePage} from './pages/IndicePage'
+import Calculos from './pages/Calculos'
 
 
 const router = createBrowserRouter(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
     { path: "/", element: <App/> },
     { path: "/indice", element: <Filtro/> },
     { path: "/reporte", element: <IndicePage/> },
+    { path: "/calculos", element: <Calculos/> },
   ]
 );
 

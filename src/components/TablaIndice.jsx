@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const TablaIndice = (props) => {
   const [datos, setdatos] = useState([]);
-  const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
+  const URL = "http://18.222.180.241:8000/";
 
   let { fechaInicio } = props;
   let { fechaFinal } = props;
@@ -31,7 +31,7 @@ export const TablaIndice = (props) => {
 
   return (
     <div className="table-contenedor">
-      <table>
+      <table id="tabla-index">
         <thead className="table-encabezado">
           <tr>
             <th className="col-narrow">TOMO</th>
