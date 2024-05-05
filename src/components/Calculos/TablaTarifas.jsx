@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 
 export const TablaTarifas = (props) => {
+  const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
   const id_acto = props.id_acto;
   const monto = props.monto;
   const calcular = props.calcular;
@@ -11,7 +12,7 @@ export const TablaTarifas = (props) => {
   useEffect(() => {
     if (calcular) {
       axios
-        .get("https://18.222.180.241:8000/get_monto", {
+        .get(URL+"get_monto", {
           params: { id_acto: id_acto, monto: monto },
         })
         .then((res) => {
