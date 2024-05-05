@@ -17,7 +17,7 @@ const Filtro = (props) => {
 
   const get_actos = (id_registro) => {
     axios
-      .get("https://18.222.180.241:8000/actos", {
+      .get("https://mysql-backend-8bc5e268b39e.herokuapp.com/actos", {
         params: { idRegistro: id_registro },
       })
       .then((res) => {
@@ -46,7 +46,7 @@ const Filtro = (props) => {
     
 
   useEffect(() => {
-    axios.get("https://18.222.180.241:8000/registros").then((res) => {
+    axios.get("https://mysql-backend-8bc5e268b39e.herokuapp.com/registros").then((res) => {
       setRegistros(res.data);
       get_actos(1);
     });
