@@ -1,27 +1,7 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+
 
 export const TablaTarifas = (props) => {
-  const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
-  const id_acto = props.id_acto;
-  const monto = props.monto;
-  const calcular = props.calcular;
-
-  const [registros, setRegistros] = useState(null);
-
-  useEffect(() => {
-    if (calcular) {
-      axios
-        .get(URL+"get_monto", {
-          params: { id_acto: id_acto, monto: monto },
-        })
-        .then((res) => {
-          setRegistros(res.data);
-        });
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [calcular]);
+  const registros = props.registros;
 
   return (
     <>

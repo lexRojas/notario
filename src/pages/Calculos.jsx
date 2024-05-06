@@ -1,17 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect }  from "react";
 import Filtro from "../components/Calculos/Filtro";
 import { TablaTarifas } from "../components/Calculos/TablaTarifas";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Calculos = () => {
 
   const navegar = useNavigate()
 
+  const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
 
   const [id_acto, setId_acto] = useState(-1);
   const [monto, setMonto] = useState(0);
   const [calcular_flag, setCalcular_Flag] = useState(false);
-
+  const [registros, setRegistros] = useState(null);
 
   const calcular = () => {
     setCalcular_Flag(true)
@@ -20,7 +22,22 @@ const Calculos = () => {
   const irMenu=()=>{
     navegar("/")
   }
+ 
 
+  useEffect(() => {
+    if (calcular_flag) {
+      axios
+        .get(URL+"get_monto", {
+          params: { id_acto: id_acto, monto: monto },
+        })
+        .then((res) => {
+          setRegistros(res.data);
+          setCalcular_Flag(false)
+        });
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [calcular]);
 
   return (
     <div className="contenedor">
@@ -32,7 +49,7 @@ const Calculos = () => {
             <Filtro setId_acto={setId_acto} setMonto={setMonto}/>
         </div>
         <div className="card-cuerpo">
-            {calcular_flag?(<TablaTarifas id_acto={id_acto} monto={monto} calcular ={calcular_flag}/>):(<></>) }
+            {registros?(<TablaTarifas registros={registros} />):(<></>) }
         </div>
         <div className="card-buttonPanel">
         <button className="my-button" onClick={calcular}>
