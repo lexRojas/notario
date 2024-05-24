@@ -336,4 +336,8 @@ footer {
 @page {
   margin: 1.5cm;
   size: 8.5in 13in landscase;
+}
+.nocartule-title {
+  font-weight: 600;
+  letter-spacing: 2px;
 }/*# sourceMappingURL=styles.css.map */

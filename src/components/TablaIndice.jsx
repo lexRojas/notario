@@ -76,7 +76,9 @@ export const TablaIndice = (props) => {
             )
           )}
           <tr>
-            <td colSpan={8}> -- N O   C A R T U L E   E S T A   Q U I N C E N A -- </td>
+            <td  className ='nocartule-title'colSpan={8}> -- NO CARTULE ESTA QUINCENA -- </td>
+            </tr>
+            <tr>  
             <td colSpan={8}> Ultima Línea </td>
           </tr>
         </tbody>
