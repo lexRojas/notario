@@ -76,6 +76,7 @@ export const TablaIndice = (props) => {
             )
           )}
           <tr>
+            <td colSpan={8}> -- N O   C A R T U L E   E S T A   Q U I N C E N A -- </td>
             <td colSpan={8}> Ultima Línea </td>
           </tr>
         </tbody>
