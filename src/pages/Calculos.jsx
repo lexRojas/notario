@@ -29,6 +29,11 @@ const Calculos = () => {
       axios
         .get(URL+"get_monto", {
           params: { id_acto: id_acto, monto: monto },
+          headers: {
+            'Cache-Control': 'no-store',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
         })
         .then((res) => {
           setRegistros(res.data);

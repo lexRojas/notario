@@ -17,6 +17,11 @@ export const TablaIndice = (props) => {
             fecha_inicio: fechaInicio,
             fecha_final: fechaFinal,
           },
+          headers: {
+            'Cache-Control': 'no-store',
+            'Pragma': 'no-cache',
+            'Expires': '0'
+          }
         })
         .then((res) => {
           console.log(res.data);
