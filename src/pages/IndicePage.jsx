@@ -49,7 +49,7 @@ export const IndicePage = () => {
           {mes.toLowerCase()} de {year}
         </h2>
         <div>
-          <p>CODIGO Nº 2579</p>
+          <p>CODIGO Nº 25794</p>
           <p>Página 1</p>
         </div>
         <TablaIndice fechaInicio={strFechaInicio} fechaFinal={strFechaFinal} />
