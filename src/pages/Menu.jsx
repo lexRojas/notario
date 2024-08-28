@@ -4,6 +4,7 @@ import calculosIco from "..//images/calculos.svg";
 import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
+import { ErrorAcceso } from "./ErrorAcceso";
 
 export const Menu = () => {
   const usuario = useSelector((state) => state.user.value);
@@ -37,11 +38,7 @@ export const Menu = () => {
     );
   } else {
     return (
-      <div className="contenedor">
-        <div className="card-menu">
-          <h1>Error no puede ingresar</h1>
-        </div>
-      </div>
+        <ErrorAcceso/>
     );
   }
 };

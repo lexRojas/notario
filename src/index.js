@@ -13,6 +13,7 @@ import { Filtro } from './pages/Filtro';
 import {IndicePage} from './pages/IndicePage'
 import Calculos from './pages/Calculos'
 import { Menu } from './pages/Menu';
+import { ErrorAcceso } from './pages/ErrorAcceso';
 
 
 const router = createBrowserRouter(
@@ -23,6 +24,7 @@ const router = createBrowserRouter(
     { path: "/indice", element: <Filtro/> },
     { path: "/reporte", element: <IndicePage/> },
     { path: "/calculos", element: <Calculos/> },
+    { path: "/error", element: <ErrorAcceso/> },
   ]
 );
 

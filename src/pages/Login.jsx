@@ -53,6 +53,8 @@ export const Login = () => {
 
         if (clave === password){
             navegar("/menu")
+        }else{
+            navegar("/error")
         }
 
     }
