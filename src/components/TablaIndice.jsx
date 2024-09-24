@@ -14,11 +14,12 @@ export const TablaIndice = (props) => {
       await axios
         .get(endpoint, {
           params: {
+            version:0,
             fecha_inicio: fechaInicio,
             fecha_final: fechaFinal,
           },
           headers: {
-            'Cache-Control': 'no-store',
+            'Cache-Control': 'no-cache',
             'Pragma': 'no-cache',
             'Expires': '0'
           }

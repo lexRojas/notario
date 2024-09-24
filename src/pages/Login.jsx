@@ -23,10 +23,10 @@ export const Login = () => {
   const user = useRef();
   const pass = useRef();
 
-  const get_usuario = (login) => {
+  const  get_usuario = async (login) => {
 
-    axios
-      .get("https://mysql-backend-8bc5e268b39e.herokuapp.com/user", {
+    await axios
+      .get("https://mysql-backend-8bc5e268b39e.herokuapp.com/users_login", {
         params: { idlogin: login },
       })
       .then((res) => {
@@ -38,15 +38,24 @@ export const Login = () => {
         }else{
             setClave(null)
         }
-      });
+      })
+      .catch( (e)=>{
+
+        console.log(e)
+      }
+
+
+      );
   };
 
-  const irMenu=()=>{
+
+
+  const irMenu=async()=>{
 
     const usuario = user.current.value
     const password = pass.current.value
 
-    get_usuario(usuario)
+    await get_usuario(usuario)
 
 
     if (clave){
@@ -84,6 +93,9 @@ export const Login = () => {
             {" "}
             Aceptar{" "}
           </button>
+        </div>
+        <div>
+          <span>Version 1-30-08-2024 20:57</span>
         </div>
       </div>
     </div>
