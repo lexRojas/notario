@@ -14,17 +14,12 @@ export const TablaIndice = (props) => {
       await axios
         .get(endpoint, {
           params: {
-            version:0,
             fecha_inicio: fechaInicio,
             fecha_final: fechaFinal,
-          },
-          headers: {
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache',
-            'Expires': '0'
           }
         })
         .then((res) => {
+          console.log('set de datos ....')
           console.log(res.data);
           setdatos(res.data);
         })
@@ -55,31 +50,17 @@ export const TablaIndice = (props) => {
           <tbody>
             {datos.map(
               ({
-                id,
-                lugar,
-                folio_1,
-                pag_1,
-                folio_2,
-                pag_2,
-                fecha,
-                escritura,
-                tomo,
-                partes,
-                hora,
-                minutos,
-                contrato,
-                entero,
-                firmas,
-              }) => (
-                <tr key={escritura}>
-                  <td> {tomo} </td>
-                  <td> {folio_1 + pag_1.substring(0, 1)} </td>
-                  <td> {folio_2 + pag_2.substring(0, 1)} </td>
-                  <td> {escritura} </td>
-                  <td> {fecha} </td>
-                  <td> {hora + ":" + minutos} </td>
-                  <td> {contrato} </td>
-                  <td> {partes} </td>
+                ValoresUsuales
+               }) => (
+                <tr key={ValoresUsuales.escritura}>
+                  <td> {ValoresUsuales.tomo} </td>
+                  <td> {ValoresUsuales.folio_1 + ValoresUsuales.pag_1.substring(0, 1)} </td>
+                  <td> {ValoresUsuales.folio_2 + ValoresUsuales.pag_2.substring(0, 1)} </td>
+                  <td> {ValoresUsuales.escritura} </td>
+                  <td> {ValoresUsuales.fecha} </td>
+                  <td> {ValoresUsuales.hora + ":" + ValoresUsuales.minutos} </td>
+                  <td> {ValoresUsuales.contrato} </td>
+                  <td> {ValoresUsuales.partes} </td>
                 </tr>
               )
             )}

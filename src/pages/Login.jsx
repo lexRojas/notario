@@ -30,11 +30,14 @@ export const Login = () => {
         params: { idlogin: login },
       })
       .then((res) => {
-        if (res.data[0]){
+
+        console.log(res.data)
+
+        if (res.data){
             console.log('si entro')
             console.log(res.data)
-            setClave(res.data[0].password)
-            dispatch(setUser(res.data[0].login))
+            setClave(res.data.password)
+            dispatch(setUser(res.login))
         }else{
             setClave(null)
         }
