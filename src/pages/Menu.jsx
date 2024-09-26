@@ -9,8 +9,6 @@ import { ErrorAcceso } from "./ErrorAcceso";
 export const Menu = () => {
   const usuario = useSelector((state) => state.user.value);
 
-  console.log(usuario);
-
   if (usuario) {
     return (
       <div className="contenedor">

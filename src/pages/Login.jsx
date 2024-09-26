@@ -1,24 +1,20 @@
-import React, { useState,useRef } from "react";
+import React, { useState,useRef,useEffect } from "react";
 import logo from "..//images/logo.png";
 import { useNavigate } from "react-router-dom";
 import axios from 'axios'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setUser } from '../store/store'
 
 
 export const Login = () => {
  
-  const usuario = useSelector((state) => state.user.value)
   const dispatch  = useDispatch()
 
-  console.log(usuario)
 
 
   const navegar = useNavigate();  
   const [clave, setClave] = useState(null)  
-
-
 
   const user = useRef();
   const pass = useRef();
@@ -31,11 +27,8 @@ export const Login = () => {
       })
       .then((res) => {
 
-        console.log(res.data)
 
         if (res.data){
-            console.log('si entro')
-            console.log(res.data)
             setClave(res.data.password)
             dispatch(setUser(res.login))
         }else{
@@ -54,26 +47,26 @@ export const Login = () => {
 
 
   const irMenu=async()=>{
+    await get_usuario(user.current.value)
+  }
 
-    const usuario = user.current.value
-    const password = pass.current.value
 
-    await get_usuario(usuario)
+  useEffect(() => {
 
 
     if (clave){
 
-        if (clave === password){
-            navegar("/menu")
-        }else{
-            navegar("/error")
-        }
+      if (clave === pass.current.value){
+          navegar("/menu")
+      }else{
+          navegar("/error")
+      }
 
-    }
-
-
+  }  
     
-  }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [clave])
+  
 
 
   return (
@@ -98,7 +91,7 @@ export const Login = () => {
           </button>
         </div>
         <div>
-          <span>Version 2-24-09-2024 20:57</span>
+          <span>Version 3-25-09-2024 20:57</span>
         </div>
       </div>
     </div>
