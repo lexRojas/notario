@@ -373,3 +373,59 @@ footer {
   font-weight: 600;
   letter-spacing: 2px;
 }
+
+.form_indice {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 1fr 1fr 1fr 1.5fr;
+  gap: 10px 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "tomo blank boton_load_index"
+    "escritura blank boton_load_index"
+    "folio_num_inicio folio_fv_inicio ."
+    "folio_num_final folio_fv_final ."
+    "lugar lugar lugar"
+    "fecha fecha firmas"
+    "hora . ."
+    "partes partes partes"
+    "contrato contrato contrato"
+    "entero . ."
+    "checks checks checks"
+    "button_panel button_panel button_panel";
+  height: 100vh;
+}
+
+.blank { grid-area: blank; }
+
+.tomo { grid-area: tomo; }
+
+.escritura { grid-area: escritura; }
+
+.boton_load_index { grid-area: boton_load_index; }
+
+.folio_num_inicio { grid-area: folio_num_inicio; }
+
+.folio_num_final { grid-area: folio_num_final; }
+
+.folio_fv_inicio { grid-area: folio_fv_inicio; }
+
+.folio_fv_final { grid-area: folio_fv_final; }
+
+.lugar { grid-area: lugar; }
+
+.fecha { grid-area: fecha; }
+
+.firmas { grid-area: firmas; }
+
+.hora { grid-area: hora; }
+
+.partes { grid-area: partes; }
+
+.contrato { grid-area: contrato; }
+
+.entero { grid-area: entero; }
+
+.checks { grid-area: checks; }
+
+.button_panel { grid-area: button_panel; }
