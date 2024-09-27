@@ -14,6 +14,7 @@ import {IndicePage} from './pages/IndicePage'
 import Calculos from './pages/Calculos'
 import { Menu } from './pages/Menu';
 import { ErrorAcceso } from './pages/ErrorAcceso';
+import Formulario from './pages/FormIndice';
 
 
 const router = createBrowserRouter(
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
     { path: "/indice", element: <Filtro/> },
     { path: "/reporte", element: <IndicePage/> },
     { path: "/calculos", element: <Calculos/> },
+    { path: "/form_indice", element: <Formulario/>},
     { path: "/error", element: <ErrorAcceso/> },
   ]
 );

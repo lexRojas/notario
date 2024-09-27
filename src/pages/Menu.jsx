@@ -1,6 +1,7 @@
 import React from "react";
 import reportIco from "..//images/report.svg";
 import calculosIco from "..//images/calculos.svg";
+import form_indice from "../images/form_indice.svg"
 import { Link } from "react-router-dom";
 
 import { useSelector } from "react-redux";
@@ -29,6 +30,12 @@ export const Menu = () => {
                 <img src={calculosIco} alt="Calculos"></img>
               </Link>
               <span>Calculos</span>
+            </div>
+            <div className="card-item">
+              <Link to="/form_indice">
+                <img src={form_indice} alt="Indice"></img>
+              </Link>
+              <span>Indice</span>
             </div>
           </div>
         </div>
