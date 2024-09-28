@@ -3,6 +3,7 @@
   padding: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 
 body {
@@ -12,12 +13,20 @@ body {
   height: 100vh;
 }
 
+.h-100 {
+  height: 100px;
+}
+
+.w-150 {
+  width: 100px;
+}
+
 .contenedor {
   position: fixed;
   margin: 0;
   padding: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.356);
+  background-color: rgba(0, 0, 0, 0.507);
   height: 100vh;
   width: 100%;
 }
@@ -104,8 +113,20 @@ img {
 .input-group {
   display: flex;
   flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 50px;
   flex-direction: column;
-  flex-basis: 250px;
+  flex-basis: 50px;
+  margin: 5px;
+}
+
+.input-group_small {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 50px;
+  flex-direction: row;
+  flex-basis: 50px;
   margin: 5px;
 }
 
@@ -385,12 +406,14 @@ footer {
 
 .form_indice {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 1fr 1fr 1fr 1.5fr;
+  max-width: 100%;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1fr 1.5fr;
   gap: 10px 10px;
   grid-auto-flow: row;
-  grid-template-areas: "tomo blank boton_load_index" "escritura blank boton_load_index" "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora . ." "partes partes partes" "contrato contrato contrato" "entero . ." "checks checks checks" "button_panel button_panel button_panel";
+  grid-template-areas: "tomo blank boton_load_index" "escritura blank boton_load_index" "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4" "checks checks checks" "button_panel button_panel button_panel";
   height: 100vh;
+  width: 100vw;
 }
 
 .blank {
@@ -433,12 +456,18 @@ footer {
   grid-area: fecha;
 }
 
-.firmas {
+.firmas_frm {
   grid-area: firmas;
+  display: flex;
+  flex-direction: column;
 }
 
 .hora {
   grid-area: hora;
+}
+
+.minutos {
+  grid-area: minutos;
 }
 
 .partes {

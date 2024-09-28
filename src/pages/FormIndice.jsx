@@ -130,9 +130,10 @@ const Formulario = () => {
             />
           </div>
 
-          <div className="input-group firmas">
+          <div className="input-group firmas_frm">
             <label>Firmas:</label>
             <input
+              
               type="number"
               name="firmas"
               value={formData.firmas}
@@ -147,7 +148,8 @@ const Formulario = () => {
               value={formData.hora}
               onChange={handleChange}
             />
-
+          </div>
+          <div className="input-group minutos">
             <label>Minutos:</label>
             <input
               type="number"
@@ -160,6 +162,7 @@ const Formulario = () => {
           <div className="input-group partes">
             <label>Partes:</label>
             <input
+              className="h-100"
               type="text"
               name="partes"
               value={formData.partes}
@@ -169,6 +172,7 @@ const Formulario = () => {
           <div className="input-group contrato">
             <label>Contrato:</label>
             <input
+              className="h-100"
               type="text"
               name="contrato"
               value={formData.contrato}

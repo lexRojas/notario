@@ -10,6 +10,7 @@ $font-size: 1rem;
   padding: 0;
   font-family: $font-family;
   font-size: $font-size;
+  box-sizing: border-box;
 }
 
 body {
@@ -42,12 +43,23 @@ body {
   overflow-y: auto;
 }
 
+
+
+.h-100{
+  height: 100px;
+}
+
+
+.w-150{
+  width: 100px;
+}
+
 .contenedor {
   position: fixed;
   margin: 0;
   padding: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.356);
+  background-color: rgba(0, 0, 0, 0.507);
   height: 100vh;
   width: 100%;
 }
@@ -102,13 +114,22 @@ img {
   padding: 20px;
 }
 
-
-
 .input-group {
   display: flex;
   flex-grow: 1;
-  flex-shrink: 2;
+  flex-shrink: 1;
+  min-width: 50px;
   flex-direction: column;
+  flex-basis: 50px;
+  margin: 5px;
+}
+
+.input-group_small {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  min-width: 50px;
+  flex-direction: row;
   flex-basis: 50px;
   margin: 5px;
 }
@@ -189,27 +210,27 @@ select > option {
   height: 100px;
 }
 
-.logoTitulo{
+.logoTitulo {
   margin: 30px 0;
   animation: heartbeat 1s infinite;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); /* Halo inicial */
 }
 
-
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(0.9);
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.9); /* Halo inicial */
-}
-5% {
+  }
+  5% {
     transform: scale(0.92);
-}
-17% {
+  }
+  17% {
     transform: scale(0.9);
-}
-25% {
+  }
+  25% {
     transform: scale(0.96);
-}
+  }
 }
 
 .indice {
@@ -233,7 +254,7 @@ select > option {
   width: 100px;
 }
 
-// ESTILOS PARA LAS TABLAS DE INDICE 
+// ESTILOS PARA LAS TABLAS DE INDICE
 
 #tabla-index {
   width: 100%;
@@ -264,7 +285,7 @@ select > option {
   background-color: rgb(240, 242, 243);
 }
 
-// ESTILOS PARA LAS TABLAS DE PANTALLA 
+// ESTILOS PARA LAS TABLAS DE PANTALLA
 
 #tabla-tarifas {
   width: 90%;
@@ -298,15 +319,13 @@ select > option {
   background-color: gray;
 }
 
-.text-center{
+.text-center {
   text-align: center;
 }
 
-.text-right{
+.text-right {
   text-align: right;
 }
-
-
 
 .col-narrow {
   width: 170px;
@@ -369,16 +388,16 @@ footer {
   size: 8.5in 13in landscase;
 }
 
-.nocartule-title{
-
+.nocartule-title {
   font-weight: 600;
   letter-spacing: 2px;
 }
 
-.form_indice {  
+.form_indice {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 1fr 1fr 1fr 1.5fr;
+  max-width: 100%;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1fr 1.5fr;
   gap: 10px 10px;
   grid-auto-flow: row;
   grid-template-areas:
@@ -388,45 +407,85 @@ footer {
     "folio_num_final folio_fv_final ."
     "lugar lugar lugar"
     "fecha fecha firmas"
-    "hora . ."
+    "hora minutos blank2"
     "partes partes partes"
     "contrato contrato contrato"
-    "entero . ."
+    "entero blank3 blank4"
     "checks checks checks"
     "button_panel button_panel button_panel";
   height: 100vh;
+  width: 100vw;
 }
 
-.blank { grid-area: blank; }
+.blank {
+  grid-area: blank;
+}
 
-.tomo { grid-area: tomo; }
+.tomo {
+  grid-area: tomo;
+}
 
-.escritura { grid-area: escritura; }
+.escritura {
+  grid-area: escritura;
+}
 
-.boton_load_index { grid-area: boton_load_index; }
+.boton_load_index {
+  grid-area: boton_load_index;
+}
 
-.folio_num_inicio { grid-area: folio_num_inicio; }
+.folio_num_inicio {
+  grid-area: folio_num_inicio;
+}
 
-.folio_num_final { grid-area: folio_num_final; }
+.folio_num_final {
+  grid-area: folio_num_final;
+}
 
-.folio_fv_inicio { grid-area: folio_fv_inicio; }
+.folio_fv_inicio {
+  grid-area: folio_fv_inicio;
+}
 
-.folio_fv_final { grid-area: folio_fv_final; }
+.folio_fv_final {
+  grid-area: folio_fv_final;
+}
 
-.lugar { grid-area: lugar; }
+.lugar {
+  grid-area: lugar;
+}
 
-.fecha { grid-area: fecha; }
+.fecha {
+  grid-area: fecha;
+}
 
-.firmas { grid-area: firmas; }
+.firmas_frm {
+  grid-area: firmas;
+  display: flex;
+  flex-direction: column;
+}
 
-.hora { grid-area: hora; }
+.hora {
+  grid-area: hora;
+}
+.minutos {
+  grid-area: minutos;
+}
 
-.partes { grid-area: partes; }
+.partes {
+  grid-area: partes;
+}
 
-.contrato { grid-area: contrato; }
+.contrato {
+  grid-area: contrato;
+}
 
-.entero { grid-area: entero; }
+.entero {
+  grid-area: entero;
+}
 
-.checks { grid-area: checks; }
+.checks {
+  grid-area: checks;
+}
 
-.button_panel { grid-area: button_panel; }
+.button_panel {
+  grid-area: button_panel;
+}
