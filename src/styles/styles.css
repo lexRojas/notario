@@ -22,19 +22,21 @@ body {
 }
 
 .contenedor {
-  position: fixed;
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 1px;
   top: 0;
   background-color: rgba(0, 0, 0, 0.507);
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  min-width: 100vw;
 }
 
 .card {
-  display: block;
-  flex-direction: column;
-  width: 55%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 55%;
   margin: auto;
   margin-top: 25px;
   border: solid gray 1px;
@@ -46,14 +48,14 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   justify-content: center;
-  max-height: 100vh;
-  overflow-y: auto;
+  overflow: auto;
 }
 
 .card-menu {
-  display: block;
-  flex-direction: column;
-  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 30%;
   margin: auto;
   margin-top: 25px;
   border: solid gray 1px;
@@ -65,8 +67,8 @@ body {
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   justify-content: center;
-  max-height: 100vh;
-  overflow-y: auto;
+  overflow: auto;
+  flex-direction: column;
 }
 
 .card-item {
@@ -91,7 +93,9 @@ img {
 }
 
 .card-titulo {
+  display: flex;
   text-align: center;
+  flex-wrap: wrap;
   color: darkred;
 }
 
@@ -174,9 +178,10 @@ select > option {
 
 @media (width <= 1000px) {
   .card {
-    display: block;
-    flex-direction: column;
-    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 90%;
     margin: 15px;
     margin-top: 25px;
     border: solid gray 1px;
@@ -188,13 +193,13 @@ select > option {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     justify-content: center;
-    max-height: 100vh;
-    overflow-y: auto;
+    overflow: auto;
   }
   .card-menu {
-    display: block;
-    flex-direction: column;
-    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    max-width: 90%;
     margin: 15px;
     margin-top: 25px;
     border: solid gray 1px;
@@ -206,8 +211,7 @@ select > option {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     justify-content: center;
-    max-height: 100vh;
-    overflow-y: auto;
+    overflow: auto;
   }
 }
 .card-buttonPanel {
@@ -427,15 +431,21 @@ footer {
 
 .form_indice {
   display: grid;
-  max-width: 100%;
-  max-height: 100%;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
-  grid-template-rows: repeat(7, minmax(65px, 1fr)) repeat(2, minmax(100px, 1fr)) minmax(65px, 1fr) minmax(65px, 1fr) minmax(65px, 1fr);
   gap: 2px 2px;
   grid-auto-flow: row;
-  grid-template-areas: "tomo blank boton_load_index" "escritura blank boton_load_index" "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4" "checks checks checks" "button_panel button_panel button_panel";
-  height: 100vh;
-  width: 100vw;
+  grid-template-areas: "titulo_form titulo_form titulo_form" "tomo blank boton_load_index" "escritura blank boton_load_index" "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4" "checks checks checks" "button_panel button_panel button_panel";
+}
+
+.titulo_form {
+  grid-area: titulo_form;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 10px;
+  border-bottom: 1px solid rgb(54, 53, 53);
+  color: darkblue;
 }
 
 .blank {
@@ -511,6 +521,7 @@ footer {
   justify-content: space-evenly;
   border: 1px solid gray;
   align-items: center;
+  height: 60px;
 }
 
 @media (width <= 1000px) {

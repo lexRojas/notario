@@ -61,14 +61,14 @@ const Formulario = () => {
   return (
     <div className="contenedor">
       <div className="card">
-        <div className="card-titulo">
-          <h1>Ingreso de Indices</h1>
-        </div>
         <div className="card-cuerpo">
           <form className="form_indice" onSubmit={handleSubmit}>
+            <div className="titulo_form">
+              Ingreso de Indices
+            </div>
+
             <button type="button" className="boton_load_index my-button ">
-                Cargar 
-                Escritura
+              Cargar Escritura
             </button>
             <div className="input-group tomo">
               <label>Tomo:</label>
