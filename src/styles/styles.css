@@ -95,6 +95,7 @@ img {
 .card-titulo {
   display: flex;
   text-align: center;
+  justify-content: center;
   flex-wrap: wrap;
   color: darkred;
 }
@@ -212,6 +213,7 @@ select > option {
     border: 1px solid rgba(255, 255, 255, 0.18);
     justify-content: center;
     overflow: auto;
+    flex-direction: column;
   }
 }
 .card-buttonPanel {
@@ -527,6 +529,7 @@ footer {
 @media (width <= 1000px) {
   .checks {
     flex-direction: column;
+    height: 80px;
   }
 }
 .check-item {
