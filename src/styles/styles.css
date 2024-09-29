@@ -1,8 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
   box-sizing: border-box;
 }
 
@@ -24,7 +24,7 @@ body {
 .contenedor {
   position: fixed;
   margin: 0;
-  padding: 0;
+  padding: 1px;
   top: 0;
   background-color: rgba(0, 0, 0, 0.507);
   height: 100vh;
@@ -32,18 +32,18 @@ body {
 }
 
 .card {
-  display: flex;
+  display: block;
   flex-direction: column;
   width: 55%;
   margin: auto;
   margin-top: 25px;
   border: solid gray 1px;
   min-width: 350px;
-  background: rgba(255, 255, 255, 0.2);
+  background: white;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(2.5px);
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   justify-content: center;
   max-height: 100vh;
@@ -51,18 +51,18 @@ body {
 }
 
 .card-menu {
-  display: flex;
+  display: block;
   flex-direction: column;
   width: 30%;
   margin: auto;
   margin-top: 25px;
   border: solid gray 1px;
   min-width: 300px;
-  background: rgba(255, 255, 255, 0.2);
+  background: white;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(2.5px);
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   justify-content: center;
   max-height: 100vh;
@@ -77,11 +77,11 @@ body {
 }
 
 .card-item > span {
-  color: white;
+  color: darkblue;
 }
 
 .card-item:hover {
-  color: rgb(255, 175, 2);
+  color: rgb(255, 238, 0);
 }
 
 img {
@@ -91,7 +91,7 @@ img {
 
 .card-titulo {
   text-align: center;
-  color: rgb(255, 251, 0);
+  color: darkred;
 }
 
 .card-cuerpo {
@@ -131,7 +131,19 @@ img {
 }
 
 .input-group > label {
-  color: white;
+  color: darkblue;
+}
+
+.input-group > input {
+  border: 1px solid rgb(146, 146, 146);
+}
+
+.input-group > input:hover {
+  border: 1px solid rgb(0, 21, 206);
+}
+
+.input-group > input:focus {
+  outline: none;
 }
 
 #flex-small {
@@ -139,7 +151,7 @@ img {
 }
 
 input {
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   text-align: center;
 }
 
@@ -161,36 +173,36 @@ select > option {
 
 @media (width <= 1000px) {
   .card {
-    display: flex;
+    display: block;
     flex-direction: column;
     width: 90%;
     margin: 15px;
     margin-top: 25px;
     border: solid gray 1px;
     min-width: 200px;
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     justify-content: center;
     max-height: 100vh;
     overflow-y: auto;
   }
   .card-menu {
-    display: flex;
+    display: block;
     flex-direction: column;
     width: 90%;
     margin: 15px;
     margin-top: 25px;
     border: solid gray 1px;
     min-width: 200px;
-    background: rgba(255, 255, 255, 0.2);
+    background: white;
     box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 20px;
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     justify-content: center;
     max-height: 100vh;
@@ -202,17 +214,18 @@ select > option {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .my-button {
   flex-grow: 1;
-  margin: 10px 20px;
-  padding: 1rem;
-  font-weight: 600;
-  border-radius: 14px;
-  background-color: #b1b1b1;
-  box-shadow: 3px 4.5px 10px 5px #2e2e2e;
+  flex-shrink: 1;
+  margin: 5px 5px;
+  padding: 0.5rem;
+  flex-basis: 1rem;
+  border-radius: 2px;
+  background-color: rgb(20, 20, 59);
+  color: white;
 }
 
 .contenedor-report {
@@ -409,7 +422,7 @@ footer {
   max-width: 100%;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1fr 1.5fr;
-  gap: 10px 10px;
+  gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas: "tomo blank boton_load_index" "escritura blank boton_load_index" "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4" "checks checks checks" "button_panel button_panel button_panel";
   height: 100vh;
