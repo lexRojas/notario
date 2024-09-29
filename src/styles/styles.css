@@ -513,18 +513,26 @@ footer {
   align-items: center;
 }
 
-.checks-item {
+@media (width <= 1000px) {
+  .checks {
+    flex-direction: column;
+  }
+}
+.check-item {
   display: inline;
-  flex-basis: 200px;
-  flex-grow: 1;
   flex-shrink: 1;
   margin: auto;
 }
 
-.check-item > input[type=checkbox] {
-  transform: scale(1.8);
+@media (width <= 1000px) {
+  .check-item {
+    display: block;
+    margin: auto;
+    width: 90%;
+    justify-content: start;
+    align-items: center;
+  }
 }
-
 .check-item > span {
   margin-left: 10px;
   font-weight: bold;
