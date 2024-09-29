@@ -9,6 +9,7 @@ $color_titulos: darkred;
 $color_ligth: white;
 $color_button: rgb(20, 20, 59);
 $color_button_texto: white;
+$color_button_hover: rgb(39, 39, 95);
 
 // cuerpo general
 
@@ -207,6 +208,17 @@ select > option {
   background-color: $color_button;
   color: $color_button_texto;
 }
+
+
+.my-button:hover {
+  background-color: $color_button_hover;
+  color: $color_texto_hover;
+  font-size: 110%;
+  cursor: pointer;
+}
+
+
+
 
 //clases para reportes
 

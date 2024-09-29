@@ -66,6 +66,10 @@ const Formulario = () => {
         </div>
         <div className="card-cuerpo">
           <form className="form_indice" onSubmit={handleSubmit}>
+            <button type="button" className="boton_load_index my-button ">
+                Cargar 
+                Escritura
+            </button>
             <div className="input-group tomo">
               <label>Tomo:</label>
               <input

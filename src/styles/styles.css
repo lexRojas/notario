@@ -229,6 +229,13 @@ select > option {
   color: white;
 }
 
+.my-button:hover {
+  background-color: rgb(39, 39, 95);
+  color: rgb(255, 238, 0);
+  font-size: 110%;
+  cursor: pointer;
+}
+
 .contenedor-report {
   height: 100vh;
   font-size: 5px;
