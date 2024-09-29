@@ -423,8 +423,9 @@ footer {
 .form_indice {
   display: grid;
   max-width: 100%;
+  max-height: 100%;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1.2fr 1fr;
   gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas:

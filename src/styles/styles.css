@@ -428,8 +428,9 @@ footer {
 .form_indice {
   display: grid;
   max-width: 100%;
+  max-height: 100%;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1fr 1.5fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2.3fr 2fr 1fr 1.2fr 1fr;
   gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas: "tomo blank boton_load_index" "escritura blank boton_load_index" "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4" "checks checks checks" "button_panel button_panel button_panel";
