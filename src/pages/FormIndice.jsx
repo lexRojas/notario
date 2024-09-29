@@ -22,10 +22,10 @@ const Formulario = () => {
   });
 
   const handleChange = (e) => {
-    console.log(e)
+    const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
@@ -200,30 +200,34 @@ const Formulario = () => {
             </div>
 
             <div className="input-group checks">
-              <label htmlFor="chk_nuevo"> Doc.Nuevo</label>
-              <input
-                type="checkbox"
-                name="chk_nuevo"
-                checked={formData.chk_nuevo}
-                onChange={handleChange}
-              />
-
-              <label htmlFor="chk_conducente"> En conducente</label>
-              <input
-                type="checkbox"
-                name="chk_conducente"
-                checked={formData.chk_conducente}
-                onChange={handleChange}
-              />
-              <label htmlFor="chk_firma_elec"> Firma Electronica</label>
-              <input
-                type="checkbox"
-                name="chk_firma_elec"
-                checked={formData.chk_firma_elec}
-                onChange={handleChange}
-              />
+              <div className="check-item">
+                <input
+                  type="checkbox"
+                  name="chk_nuevo"
+                  checked={formData.chk_nuevo}
+                  onChange={handleChange}
+                />
+                <span> Doc. Nuevo</span>
+              </div>
+              <div className="check-item">
+                <input
+                  type="checkbox"
+                  name="chk_conducente"
+                  checked={formData.chk_conducente}
+                  onChange={handleChange}
+                />
+                <span> En conducente</span>
+              </div>
+              <div className="check-item">
+                <input
+                  type="checkbox"
+                  name="chk_firma_elec"
+                  checked={formData.chk_firma_elec}
+                  onChange={handleChange}
+                />
+                <span> Firma Electronica</span>
+              </div>
             </div>
-
             <div className="button_panel  card-buttonPanel">
               <button className="my-button" type="submit">
                 Aceptar

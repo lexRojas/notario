@@ -78,6 +78,7 @@ body {
 
 .card-item > span {
   color: darkblue;
+  font-weight: bold;
 }
 
 .card-item:hover {
@@ -497,6 +498,29 @@ footer {
 
 .checks {
   grid-area: checks;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid gray;
+  align-items: center;
+}
+
+.checks-item {
+  display: inline;
+  flex-basis: 200px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: auto;
+}
+
+.check-item > input[type=checkbox] {
+  transform: scale(1.8);
+}
+
+.check-item > span {
+  margin-left: 10px;
+  font-weight: bold;
+  color: darkblue;
 }
 
 .button_panel {
