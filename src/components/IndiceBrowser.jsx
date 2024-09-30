@@ -3,6 +3,10 @@ import axios from "axios";
 import "../styles/modalPanel.css";
 
 export const IndiceBrowser = (props) => {
+
+
+  const {setverBrowser, loadRecord} = props
+
   const [datos, setdatos] = useState([]);
   const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
   const [selectedRow, setSelectedRow] = useState(null);
@@ -25,28 +29,39 @@ export const IndiceBrowser = (props) => {
     getInfo();
   }, []);
 
+
+const selectIndice = (registro)=>{
+
+  setSelectedRow(registro.id)
+  loadRecord(registro)
+  setverBrowser(false)
+
+}
+
+
+
   if (datos.length > 0) {
     return (
       <div className="modal">
         <div className="modal-content">
           <div className="table-container">
-            <table id="">
-              <thead className="">
+            <table >
+              <thead className="tabla-head">
                 <tr>
-                  <th className="">NUMERO</th>
-                  <th className="">ACTO O CONTRATO</th>
-                  <th className="">PARTES</th>
+                  <th >NUMERO</th>
+                  <th >ACTO O CONTRATO</th>
+                  <th >PARTES</th>
                 </tr>
               </thead>
               <tbody>
-                {datos.map(({ id, escritura, contrato, partes }) => (
+                {datos.map((row, id) => (
                   <tr key={id}
                       className={selectedRow=== id?'selected':'' }
-                      onClick={()=>setSelectedRow(id)}
+                      onClick={()=>selectIndice(row)}
                   >
-                    <td> {escritura} </td>
-                    <td> {contrato} </td>
-                    <td> {partes} </td>
+                    <td> {row.escritura} </td>
+                    <td> {row.contrato} </td>
+                    <td> {row.partes} </td>
                   </tr>
                 ))}
               </tbody>
@@ -59,17 +74,17 @@ export const IndiceBrowser = (props) => {
     return (
       <div className="modal">
         <div className="modal-content">
-          <table id="tabla-index">
-            <thead className="">
+          <table >
+            <thead >
               <tr>
-                <th className="">NUMERO</th>
-                <th className="">ACTO O CONTRATO</th>
-                <th className="">PARTES</th>
+                <th >NUMERO</th>
+                <th >ACTO O CONTRATO</th>
+                <th >PARTES</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="" colSpan={8}>
+                <td  colSpan={8}>
                   {" "}
                   -- NO HAY ESCRITURAS --{" "}
                 </td>

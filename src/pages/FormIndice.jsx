@@ -7,6 +7,7 @@ const Formulario = () => {
 
   const [verBrowser, setverBrowser] = useState(false)
   const [formData, setFormData] = useState({
+    id:"",
     folio_1: "",
     pag_1: "",
     folio_2: "",
@@ -25,6 +26,32 @@ const Formulario = () => {
     chk_conducente: false,
     chk_firma_elec: false,
   });
+
+  const loadRecord = (registro)=>{
+
+console.log(registro)
+
+  const miRegistro = {
+    id: registro.id,
+    folio_1: registro.folio_1,
+    pag_1: registro.pag_1,
+    folio_2: registro.folio_2,
+    pag_2:registro.pag_2,
+    fecha: registro.fecha,
+    escritura: registro.escritura,
+    tomo: registro.tomo,
+    partes: registro.partes,
+    hora: registro.hora,
+    minutos: registro.minutos,
+    contrato: registro.contrato,
+    entero: registro.entero,
+    firmas: registro.firmas,
+    lugar: registro.lugar,
+  }
+
+  setFormData(miRegistro)
+
+  }
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -68,7 +95,6 @@ const Formulario = () => {
 
   const browser = () =>{
       setverBrowser(true)
-
   }
 
 
@@ -76,7 +102,10 @@ const Formulario = () => {
 
   return (
     <div className="contenedor">
-      {verBrowser?(<div> <IndiceBrowser/> </div>
+      {verBrowser?(<div> <IndiceBrowser 
+                            setverBrowser = {setverBrowser}
+                            loadRecord = {loadRecord}
+                        /> </div>
       ):<></>
       }
       <div className="card-form-indice">

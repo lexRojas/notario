@@ -64,7 +64,7 @@
     background-color: #5280d4a9; /* Color para la fila seleccionada */
   }
 
-  thead th {
+  .tabla-head {
     position: sticky;
     top: 0; /* Fija los encabezados en la parte superior cuando se desplaza */
     background-color: #fff; /* Color de fondo para el encabezado */
