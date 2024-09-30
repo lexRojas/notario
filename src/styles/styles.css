@@ -30,17 +30,17 @@ body {
   background-color: rgba(0, 0, 0, 0.507);
   min-height: 100vh;
   min-width: 100vw;
+  justify-items: center;
+  align-items: center;
 }
 
 .card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  max-width: 55%;
-  margin: auto;
-  margin-top: 25px;
-  border: solid gray 1px;
   min-width: 350px;
+  margin: auto auto;
+  border: solid gray 1px;
   background: white;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(3.5px);
@@ -55,11 +55,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  max-width: 30%;
-  margin: auto;
-  margin-top: 25px;
-  border: solid gray 1px;
   min-width: 300px;
+  margin: auto auto;
+  border: solid gray 1px;
   background: white;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(3.5px);
@@ -71,10 +69,45 @@ body {
   flex-direction: column;
 }
 
+@media (width <= 1000px) {
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-width: 90%;
+    margin: 15px auto;
+    border: solid gray 1px;
+    background: white;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    justify-content: center;
+    overflow: auto;
+  }
+  .card-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-width: 90%;
+    margin: 15px auto;
+    border: solid gray 1px;
+    background: white;
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+    backdrop-filter: blur(3.5px);
+    -webkit-backdrop-filter: blur(2.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    justify-content: center;
+    overflow: auto;
+    flex-direction: column;
+  }
+}
 .card-item {
-  width: 10rem;
-  height: 10rem;
-  margin: 1rem;
+  width: 6rem;
+  height: 6rem;
+  margin: 0.5rem;
   text-align: center;
 }
 
@@ -88,8 +121,8 @@ body {
 }
 
 img {
-  width: 9rem;
-  height: 9rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .card-titulo {
@@ -177,45 +210,6 @@ select > option {
   margin: 5px;
 }
 
-@media (width <= 1000px) {
-  .card {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 90%;
-    margin: 15px;
-    margin-top: 25px;
-    border: solid gray 1px;
-    min-width: 200px;
-    background: white;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    justify-content: center;
-    overflow: auto;
-  }
-  .card-menu {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    max-width: 90%;
-    margin: 15px;
-    margin-top: 25px;
-    border: solid gray 1px;
-    min-width: 200px;
-    background: white;
-    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
-    backdrop-filter: blur(3.5px);
-    -webkit-backdrop-filter: blur(2.5px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    justify-content: center;
-    overflow: auto;
-    flex-direction: column;
-  }
-}
 .card-buttonPanel {
   display: flex;
   flex-direction: row;

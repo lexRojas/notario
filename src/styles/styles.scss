@@ -30,16 +30,16 @@ body {
 
 // clases personalizables
 
-@mixin card($width, $min-width, $margin) {
+@mixin card($min-width, $margin) {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  max-width: $width;
-  margin: $margin;
-  margin-top: 25px;
+  min-width: $min-width;
+  
+  margin: $margin auto;
 
   border: solid gray 1px;
-  min-width: $min-width;
+  
 
   background: $color_ligth;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
@@ -69,23 +69,34 @@ body {
   background-color: rgba(0, 0, 0, 0.507);
   min-height: 100vh;
   min-width: 100vw;
+  justify-items: center;
+  align-items: center;
 }
 
 //clases para formularios
 
 .card {
-  @include card(55%, 350px, auto);
+  @include card(350px, auto);
 }
 
 .card-menu {
-  @include card(30%, 300px, auto);
+  @include card( 300px, auto);
   flex-direction: column;
 }
 
+@media (width <=1000px) {
+  .card {
+    @include card(90%, 15px);
+  }
+  .card-menu {
+    @include card(90%, 15px);
+    flex-direction: column;
+  }
+}
 .card-item {
-  width: 10rem;
-  height: 10rem;
-  margin: 1rem;
+  width: 6rem;
+  height: 6rem;
+  margin: 0.5rem;
   text-align: center;
 }
 
@@ -99,8 +110,8 @@ body {
 }
 
 img {
-  width: 9rem;
-  height: 9rem;
+  width: 5rem;
+  height: 5rem;
 }
 
 .card-titulo {
@@ -187,15 +198,7 @@ select > option {
   margin: 5px;
 }
 
-@media (width <=1000px) {
-  .card {
-    @include card(90%, 200px, 15px);
-  }
-  .card-menu {
-    @include card(90%, 200px, 15px);
-    flex-direction: column;
-  }
-}
+
 
 .card-buttonPanel {
   display: flex;
