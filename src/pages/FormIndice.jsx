@@ -1,6 +1,12 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Formulario = () => {
+
+  const navegar = useNavigate()
+
+
   const [formData, setFormData] = useState({
     folio_1: "",
     pag_1: "",
@@ -56,6 +62,8 @@ const Formulario = () => {
       chk_conducente: false,
       chk_firma_elec: false,
     });
+
+    navegar('/menu')
   };
 
   return (
@@ -63,8 +71,8 @@ const Formulario = () => {
       <div className="card">
         <div className="card-cuerpo">
           <form className="form_indice" onSubmit={handleSubmit}>
-            <div className="titulo_form">
-              Ingreso de Indices
+            <div className="titulo_form card-titulo">
+              <h1>Ingreso de Indices</h1>
             </div>
 
             <button type="button" className="boton_load_index my-button ">

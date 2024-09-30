@@ -30,16 +30,16 @@ body {
 
 // clases personalizables
 
-@mixin card($min-width, $margin) {
+@mixin card($max-width, $margin) {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  min-width: $min-width;
-  
+  max-width: $max-width;
+
   margin: $margin auto;
 
   border: solid gray 1px;
-  
+
 
   background: $color_ligth;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
@@ -56,7 +56,7 @@ body {
   height: 100px;
 }
 
-.w-150 {
+.w-100 {
   width: 100px;
 }
 
@@ -80,8 +80,8 @@ body {
 }
 
 .card-menu {
-  @include card( 300px, auto);
-  flex-direction: column;
+  @include card(300px, auto);
+
 }
 
 @media (width <=1000px) {
@@ -90,13 +90,12 @@ body {
   }
   .card-menu {
     @include card(90%, 15px);
-    flex-direction: column;
   }
 }
 .card-item {
-  width: 6rem;
-  height: 6rem;
-  margin: 0.5rem;
+  width: 7rem;
+  height: 7rem;
+  margin: 0.6rem;
   text-align: center;
 }
 
@@ -109,9 +108,9 @@ body {
   color: $color_texto_hover;
 }
 
-img {
-  width: 5rem;
-  height: 5rem;
+.card-item img {
+  width: 6rem;
+  height: 6rem;
 }
 
 .card-titulo {
@@ -120,6 +119,7 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   color: $color_titulos;
+  min-width: 100%
 }
 .card-cuerpo {
   display: flex;
@@ -127,6 +127,7 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 10px;
+  min-width: 100%
 }
 
 .card-cuerpo-login {
@@ -135,6 +136,17 @@ img {
   justify-content: center;
   margin-bottom: 10px;
   padding: 20px;
+  min-width: 100%;
+}
+
+
+.card-buttonPanel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  min-width: 100%;
 }
 
 .input-group {
@@ -145,6 +157,8 @@ img {
   flex-direction: column;
   flex-basis: 50px;
   margin: 5px;
+  min-width: 100%;
+  padding: 10px;
 }
 
 .input-group_small {
@@ -200,13 +214,6 @@ select > option {
 
 
 
-.card-buttonPanel {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 1rem;
-}
 
 .my-button {
   flex-grow: 1;
@@ -217,6 +224,7 @@ select > option {
   border-radius: 2px;
   background-color: $color_button;
   color: $color_button_texto;
+  min-height: 4rem;
 }
 
 .my-button:hover {
@@ -435,7 +443,7 @@ footer {
   gap: 2px 2px;
   grid-auto-flow: row;
   grid-template-areas:
-    "titulo_form titulo_form titulo_form" 
+    "titulo_form titulo_form titulo_form"
     "tomo blank boton_load_index"
     "escritura blank boton_load_index"
     "folio_num_inicio folio_fv_inicio ."
@@ -453,13 +461,6 @@ footer {
 
 .titulo_form{
   grid-area: titulo_form;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 10px;
-  border-bottom: 1px solid rgb(54, 53, 53);
-  color: $color_texto;
 
 }
 
@@ -560,7 +561,7 @@ footer {
     justify-content: start;
     align-items: center;
   }
-  
+
 }
 
 .check-item > span {

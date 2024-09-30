@@ -1,14 +1,23 @@
 import React from "react";
 import reportIco from "..//images/report.svg";
 import calculosIco from "..//images/calculos.svg";
-import form_indice from "../images/form_indice.svg"
-import { Link } from "react-router-dom";
+import form_indice from "../images/form_indice.svg";
+import { Link, useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { ErrorAcceso } from "./ErrorAcceso";
 
+
 export const Menu = () => {
+
+  const navegar = useNavigate()
   const usuario = useSelector((state) => state.user.value);
+
+  const salir = () => {
+    navegar('/')
+  }
+
+
 
   if (usuario) {
     return (
@@ -37,13 +46,19 @@ export const Menu = () => {
               </Link>
               <span>Indice</span>
             </div>
+            <div className="card-cuerpo">
+              <button 
+              className="my-button" 
+              type="button"
+              onClick={salir}>
+                Salir
+              </button>
+            </div>
           </div>
         </div>
       </div>
     );
   } else {
-    return (
-        <ErrorAcceso/>
-    );
+    return <ErrorAcceso />;
   }
 };

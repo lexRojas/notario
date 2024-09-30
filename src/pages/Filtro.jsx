@@ -37,7 +37,7 @@ export const Filtro = () => {
 
 
     const irMenu=()=>{
-      navegar("/")
+      navegar("/menu")
     }
 
   return (

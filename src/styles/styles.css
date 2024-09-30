@@ -17,7 +17,7 @@ body {
   height: 100px;
 }
 
-.w-150 {
+.w-100 {
   width: 100px;
 }
 
@@ -38,7 +38,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  min-width: 350px;
+  max-width: 350px;
   margin: auto auto;
   border: solid gray 1px;
   background: white;
@@ -55,7 +55,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  min-width: 300px;
+  max-width: 300px;
   margin: auto auto;
   border: solid gray 1px;
   background: white;
@@ -66,7 +66,6 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.18);
   justify-content: center;
   overflow: auto;
-  flex-direction: column;
 }
 
 @media (width <= 1000px) {
@@ -74,7 +73,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    min-width: 90%;
+    max-width: 90%;
     margin: 15px auto;
     border: solid gray 1px;
     background: white;
@@ -90,7 +89,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    min-width: 90%;
+    max-width: 90%;
     margin: 15px auto;
     border: solid gray 1px;
     background: white;
@@ -101,13 +100,12 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.18);
     justify-content: center;
     overflow: auto;
-    flex-direction: column;
   }
 }
 .card-item {
-  width: 6rem;
-  height: 6rem;
-  margin: 0.5rem;
+  width: 7rem;
+  height: 7rem;
+  margin: 0.6rem;
   text-align: center;
 }
 
@@ -120,9 +118,9 @@ body {
   color: rgb(255, 238, 0);
 }
 
-img {
-  width: 5rem;
-  height: 5rem;
+.card-item img {
+  width: 6rem;
+  height: 6rem;
 }
 
 .card-titulo {
@@ -131,6 +129,7 @@ img {
   justify-content: center;
   flex-wrap: wrap;
   color: darkred;
+  min-width: 100%;
 }
 
 .card-cuerpo {
@@ -139,6 +138,7 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 10px;
+  min-width: 100%;
 }
 
 .card-cuerpo-login {
@@ -147,6 +147,16 @@ img {
   justify-content: center;
   margin-bottom: 10px;
   padding: 20px;
+  min-width: 100%;
+}
+
+.card-buttonPanel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
+  min-width: 100%;
 }
 
 .input-group {
@@ -157,6 +167,8 @@ img {
   flex-direction: column;
   flex-basis: 50px;
   margin: 5px;
+  min-width: 100%;
+  padding: 10px;
 }
 
 .input-group_small {
@@ -210,14 +222,6 @@ select > option {
   margin: 5px;
 }
 
-.card-buttonPanel {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-bottom: 1rem;
-}
-
 .my-button {
   flex-grow: 1;
   flex-shrink: 1;
@@ -227,6 +231,7 @@ select > option {
   border-radius: 2px;
   background-color: rgb(20, 20, 59);
   color: white;
+  min-height: 4rem;
 }
 
 .my-button:hover {
@@ -435,13 +440,6 @@ footer {
 
 .titulo_form {
   grid-area: titulo_form;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 10px;
-  border-bottom: 1px solid rgb(54, 53, 53);
-  color: darkblue;
 }
 
 .blank {

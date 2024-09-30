@@ -20,7 +20,7 @@ const Calculos = () => {
   };
 
   const irMenu=()=>{
-    navegar("/")
+    navegar("/menu")
   }
  
 
