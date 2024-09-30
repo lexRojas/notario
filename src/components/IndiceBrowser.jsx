@@ -5,6 +5,7 @@ import "../styles/modalPanel.css";
 export const IndiceBrowser = (props) => {
   const [datos, setdatos] = useState([]);
   const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
+  const [selectedRow, setSelectedRow] = useState(null);
 
   useEffect(() => {
     const endpoint = URL + "indice";
@@ -39,7 +40,10 @@ export const IndiceBrowser = (props) => {
               </thead>
               <tbody>
                 {datos.map(({ id, escritura, contrato, partes }) => (
-                  <tr key={id}>
+                  <tr key={id}
+                      className={selectedRow=== id?'selected':'' }
+                      onClick={()=>setSelectedRow(id)}
+                  >
                     <td> {escritura} </td>
                     <td> {contrato} </td>
                     <td> {partes} </td>
