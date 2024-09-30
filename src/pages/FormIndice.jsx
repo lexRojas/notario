@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {IndiceBrowser } from "../components/IndiceBrowser"
 
 const Formulario = () => {
+  const navegar = useNavigate();
 
-  const navegar = useNavigate()
-
-
+  const [verBrowser, setverBrowser] = useState(false)
   const [formData, setFormData] = useState({
     folio_1: "",
     pag_1: "",
@@ -63,19 +62,34 @@ const Formulario = () => {
       chk_firma_elec: false,
     });
 
-    navegar('/menu')
+    navegar("/menu");
   };
+
+
+  const browser = () =>{
+      setverBrowser(true)
+
+  }
+
+
+
 
   return (
     <div className="contenedor">
-      <div className="card">
+      {verBrowser?(<div> <IndiceBrowser/> </div>
+      ):<></>
+      }
+      <div className="card-form-indice">
         <div className="card-cuerpo">
           <form className="form_indice" onSubmit={handleSubmit}>
             <div className="titulo_form card-titulo">
               <h1>Ingreso de Indices</h1>
             </div>
 
-            <button type="button" className="boton_load_index my-button ">
+            <button 
+              type="button" 
+              className="boton_load_index my-button "
+              onClick={browser}>
               Cargar Escritura
             </button>
             <div className="input-group tomo">
@@ -158,6 +172,9 @@ const Formulario = () => {
               <input
                 type="number"
                 name="firmas"
+                min="1"
+                max="20"
+                step="1"
                 value={formData.firmas}
                 onChange={handleChange}
               />
@@ -167,6 +184,9 @@ const Formulario = () => {
               <input
                 type="number"
                 name="hora"
+                min="1"
+                max="23"
+                step="1"
                 value={formData.hora}
                 onChange={handleChange}
               />
@@ -176,6 +196,9 @@ const Formulario = () => {
               <input
                 type="number"
                 name="minutos"
+                min="1"
+                max="59"
+                step="1"
                 value={formData.minutos}
                 onChange={handleChange}
               />

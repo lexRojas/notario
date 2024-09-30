@@ -68,6 +68,23 @@ body {
   overflow: auto;
 }
 
+.card-form-indice {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  max-width: 500px;
+  margin: auto auto;
+  border: solid gray 1px;
+  background: white;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  justify-content: center;
+  overflow: auto;
+}
+
 @media (width <= 1000px) {
   .card {
     display: flex;
@@ -204,6 +221,11 @@ body {
 input {
   padding: 0.5rem 0;
   text-align: center;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: 30px;
 }
 
 select {

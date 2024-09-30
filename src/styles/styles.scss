@@ -84,6 +84,12 @@ body {
 
 }
 
+.card-form-indice {
+  @include card(500px, auto);
+
+}
+
+
 @media (width <=1000px) {
   .card {
     @include card(90%, 15px);
@@ -194,7 +200,16 @@ body {
 input {
   padding: 0.5rem 0;
   text-align: center;
+  
 }
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  height: 30px;
+}
+
+
 
 select {
   padding: 1rem 0;
