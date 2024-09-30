@@ -21,10 +21,7 @@ const Formulario = () => {
     contrato: "",
     entero: "",
     firmas: "",
-    lugar: "",
-    chk_nuevo: false,
-    chk_conducente: false,
-    chk_firma_elec: false,
+    lugar: ""
   });
 
   const loadRecord = (registro)=>{
@@ -83,10 +80,7 @@ console.log(registro)
       contrato: "",
       entero: "",
       firmas: "",
-      lugar: "",
-      chk_nuevo: false,
-      chk_conducente: false,
-      chk_firma_elec: false,
+      lugar: ""
     });
 
     navegar("/menu");
@@ -117,7 +111,7 @@ console.log(registro)
 
             <button 
               type="button" 
-              className="boton_load_index my-button "
+              className="boton_load_index my-button h-80"
               onClick={browser}>
               Cargar Escritura
             </button>
@@ -263,35 +257,6 @@ console.log(registro)
               />
             </div>
 
-            <div className="input-group checks">
-              <div className="check-item">
-                <input
-                  type="checkbox"
-                  name="chk_nuevo"
-                  checked={formData.chk_nuevo}
-                  onChange={handleChange}
-                />
-                <span> Doc. Nuevo</span>
-              </div>
-              <div className="check-item">
-                <input
-                  type="checkbox"
-                  name="chk_conducente"
-                  checked={formData.chk_conducente}
-                  onChange={handleChange}
-                />
-                <span> En conducente</span>
-              </div>
-              <div className="check-item">
-                <input
-                  type="checkbox"
-                  name="chk_firma_elec"
-                  checked={formData.chk_firma_elec}
-                  onChange={handleChange}
-                />
-                <span> Firma Electronica</span>
-              </div>
-            </div>
             <div className="button_panel  card-buttonPanel">
               <button className="my-button" type="submit">
                 Aceptar
