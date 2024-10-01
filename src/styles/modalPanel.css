@@ -8,40 +8,56 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    align-items: center;
   }
   
   /* Contenido del modal */
   .modal-content {
+    flex-wrap: wrap;
     background-color: #fff;
-    margin:  20px auto; /* Centrado vertical y horizontal */
+    margin:  20px auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px; /* Ancho máximo */
-    max-height: 80%; /* Altura máxima */
-    overflow-y: auto; /* Scroll si es necesario */
+    max-height: 800px; /* Altura máxima */
+    overflow:none;
     border-radius: 8px;
   }
   
-  /* Botón para cerrar */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+  .modal-menssage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #fff;
+    margin:  auto; /* Centrado vertical y horizontal */
+    padding: 5px;
+    border: 1px solid #888;
+    border-radius: 8px;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+
+  .modal-menssage img{
+ 
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .modal-menssage span{
+
+    font-size: 20px;
     font-weight: bold;
-    cursor: pointer;
+    color: rgb(27, 48, 6);
   }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
+
+
+
   /* Estilos para la tabla */
   table {
-    width: 100%;
     border-collapse: collapse;
   }
   
@@ -71,10 +87,34 @@
     z-index: 1;
   }
 
-  /* Contenedor con scroll */
-  .table-container {
-    max-height: 75%;
-    overflow-y: auto;
+    .browser-grid{
+    display: grid;
+    grid-template-areas: 
+        "panel1"
+        "panel2" ;
+    gap: 5px;
   }
   
+  .panel1 {
+    grid-area: panel1;
+    display: flex;
+    justify-content: end;
+  }
+
+  .panel1 button{
+    display: flex;
+    align-items: end;
+    background-color: rgb(9, 9, 83);
+    padding: 5px 15px;
+    font-size: large;
+    color: aliceblue; 
+  }
+
+
+
+  .panel2 {
+    grid-area: panel2;
+    overflow-y: auto;
+    max-height: 700px;
+  }
 

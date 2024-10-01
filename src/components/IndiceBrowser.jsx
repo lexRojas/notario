@@ -3,9 +3,7 @@ import axios from "axios";
 import "../styles/modalPanel.css";
 
 export const IndiceBrowser = (props) => {
-
-
-  const {setverBrowser, loadRecord} = props
+  const { setverBrowser, loadRecord, setEditando } = props;
 
   const [datos, setdatos] = useState([]);
   const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
@@ -29,14 +27,18 @@ export const IndiceBrowser = (props) => {
     getInfo();
   }, []);
 
+  const selectIndice = (registro) => {
+    setSelectedRow(registro.id);
+    loadRecord(registro);
+    setverBrowser(false);
+    setEditando(true);
+  };
 
-const selectIndice = (registro)=>{
+  const salir = () => {
+    setverBrowser(false);
+    setEditando(false);
+  };
 
-  setSelectedRow(registro.id)
-  loadRecord(registro)
-  setverBrowser(false)
-
-}
 
 
 
@@ -44,28 +46,34 @@ const selectIndice = (registro)=>{
     return (
       <div className="modal">
         <div className="modal-content">
-          <div className="table-container">
-            <table >
-              <thead className="tabla-head">
-                <tr>
-                  <th >NUMERO</th>
-                  <th >ACTO O CONTRATO</th>
-                  <th >PARTES</th>
-                </tr>
-              </thead>
-              <tbody>
-                {datos.map((row, id) => (
-                  <tr key={id}
-                      className={selectedRow=== id?'selected':'' }
-                      onClick={()=>selectIndice(row)}
-                  >
-                    <td> {row.escritura} </td>
-                    <td> {row.contrato} </td>
-                    <td> {row.partes} </td>
+          <div className="browser-grid">
+            <div className="panel1">
+              <button type="button" onClick={salir}>Salir</button>
+            </div>
+            <div className="panel2">
+              <table>
+                <thead className="tabla-head">
+                  <tr>
+                    <th>NUMERO</th>
+                    <th>ACTO O CONTRATO</th>
+                    <th>PARTES</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {datos.map((row, id) => (
+                    <tr
+                      key={id}
+                      className={selectedRow === id ? "selected" : ""}
+                      onClick={() => selectIndice(row)}
+                    >
+                      <td> {row.escritura} </td>
+                      <td> {row.contrato} </td>
+                      <td> {row.partes} </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -74,20 +82,17 @@ const selectIndice = (registro)=>{
     return (
       <div className="modal">
         <div className="modal-content">
-          <table >
-            <thead >
+          <table>
+            <thead>
               <tr>
-                <th >NUMERO</th>
-                <th >ACTO O CONTRATO</th>
-                <th >PARTES</th>
+                <th>NUMERO</th>
+                <th>ACTO O CONTRATO</th>
+                <th>PARTES</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td  colSpan={8}>
-                  {" "}
-                  -- NO HAY ESCRITURAS --{" "}
-                </td>
+                <td colSpan={8}> -- NO HAY ESCRITURAS -- </td>
               </tr>
             </tbody>
           </table>
