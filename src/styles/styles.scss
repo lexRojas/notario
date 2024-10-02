@@ -479,11 +479,13 @@ footer {
 
 .folios{
     display: grid; 
-    grid-template-columns: 20% 30% 20% 30%;
+    grid-template-columns: 20% 25% 20% 25%;
     grid-template-rows: auto; 
     grid-template-areas: 
       "folio_num_inicio folio_fv_inicio folio_num_final folio_fv_final"; 
     grid-area: folios; 
+    justify-content: space-between;
+    
   }
 
   @media (max-width: 500px) {
