@@ -479,7 +479,7 @@ footer {
 
 .folios{
     display: grid; 
-    grid-template-columns: repeat(4, minmax(75px, 1f)); 
+    grid-template-columns: 20% 30% 20% 30%;
     grid-template-rows: 1fr; 
     gap: 0px 2px; 
     grid-template-areas: 
@@ -487,7 +487,7 @@ footer {
     grid-area: folios; 
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 500px) {
     .folios {
         grid-auto-flow: row;
         grid-template-columns: 1fr;
