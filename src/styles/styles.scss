@@ -13,7 +13,7 @@ $color_button_hover: rgb(39, 39, 95);
 
 // cuerpo general
 
-* {
+*,  *::before, *::after {
   margin: 0;
   padding: 0;
   font-family: $font-family;
@@ -480,8 +480,7 @@ footer {
 .folios{
     display: grid; 
     grid-template-columns: 20% 30% 20% 30%;
-    grid-template-rows: 1fr; 
-    gap: 0px 2px; 
+    grid-template-rows: auto; 
     grid-template-areas: 
       "folio_num_inicio folio_fv_inicio folio_num_final folio_fv_final"; 
     grid-area: folios; 
