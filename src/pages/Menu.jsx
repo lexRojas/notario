@@ -46,7 +46,7 @@ export const Menu = () => {
               </Link>
               <span>Indice</span>
             </div>
-            <div className="card-cuerpo">
+            <div className="card-buttonPanel">
               <button 
               className="my-button" 
               type="button"

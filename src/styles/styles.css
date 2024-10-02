@@ -159,6 +159,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 10px;
+  padding: 20px;
   min-width: 100%;
 }
 
@@ -176,8 +177,9 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-bottom: 1rem;
   min-width: 100%;
+  padding: 20px;
+  gap: 5px;
 }
 
 .input-group {
@@ -187,9 +189,7 @@ body {
   min-width: 50px;
   flex-direction: column;
   flex-basis: 50px;
-  margin: 5px;
   min-width: 100%;
-  padding: 10px;
 }
 
 .input-group_small {
@@ -251,12 +251,12 @@ select > option {
 .my-button {
   flex-grow: 1;
   flex-shrink: 1;
-  margin: 5px 5px;
-  padding: 0.5rem;
+  margin: 5px 0px;
   flex-basis: 1rem;
   border-radius: 2px;
   background-color: rgb(20, 20, 59);
   color: white;
+  min-height: 4rem;
 }
 
 .my-button:hover {
@@ -283,6 +283,7 @@ select > option {
 
 .logoTitulo {
   margin: 30px 0;
+  width: 50%;
   animation: heartbeat 1s infinite;
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); /* Halo inicial */
 }
@@ -460,9 +461,25 @@ footer {
   grid-template-columns: repeat(3, minmax(50px, 1fr));
   gap: 2px 2px;
   grid-auto-flow: row;
-  grid-template-areas: "titulo_form titulo_form titulo_form" "tomo blank boton_load_index" "escritura blank ." "folio_num_inicio folio_fv_inicio ." "folio_num_final folio_fv_final ." "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4" "button_panel button_panel button_panel";
+  grid-template-areas: "titulo_form titulo_form titulo_form" "tomo blank boton_load_index" "escritura blank ." "folios folios folios" "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4";
 }
 
+.folios {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(75px, 1f));
+  grid-template-rows: 1fr;
+  gap: 0px 2px;
+  grid-template-areas: "folio_num_inicio folio_fv_inicio folio_num_final folio_fv_final";
+  grid-area: folios;
+}
+
+@media (max-width: 600px) {
+  .folios {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-areas: "folio_num_inicio" "folio_fv_inicio" "folio_num_final" "folio_fv_final";
+  }
+}
 .titulo_form {
   grid-area: titulo_form;
 }
@@ -477,6 +494,29 @@ footer {
 
 .escritura {
   grid-area: escritura;
+  display: flex;
+  width: 100%;
+}
+
+#searchTextField {
+  display: flex;
+  flex-direction: row;
+}
+
+#searchField {
+  flex: 1;
+}
+
+#searchButton {
+  background-color: rgb(20, 20, 59);
+  color: darkblue;
+  padding: 2px;
+  margin-left: 5px;
+}
+
+#searchButton:hover {
+  background-color: rgb(39, 39, 95);
+  color: rgb(255, 238, 0);
 }
 
 .boton_load_index {
@@ -531,10 +571,4 @@ footer {
 
 .entero {
   grid-area: entero;
-}
-
-.button_panel {
-  grid-area: button_panel;
-  display: flex;
-  align-items: center;
 }/*# sourceMappingURL=styles.css.map */

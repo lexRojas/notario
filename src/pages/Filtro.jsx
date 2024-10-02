@@ -48,7 +48,7 @@ export const Filtro = () => {
             <h1>Indice Notarial</h1>
         </div>
         <div className="card-cuerpo">
-
+          
             <div className="input-group">
                 <label htmlFor="mes">Mes</label>
                 <select ref={mes} defaultValue={m}> 
