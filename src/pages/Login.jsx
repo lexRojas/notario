@@ -64,7 +64,7 @@ export const Login = () => {
           </button>
         </div>
         <div>
-          <span>Version 2-oct-2024 2024</span>
+          <span>Version 2-oct-2024 pantalla</span>
         </div>
       </div>
     </div>
