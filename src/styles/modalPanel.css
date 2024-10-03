@@ -59,7 +59,7 @@ table {
 @media (max-width: 500px) {
  table td, 
  table th {
-  font-size: smaller;
+  font-size: x-small;
  }
 }
 
