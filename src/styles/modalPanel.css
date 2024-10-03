@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     background-color: #fff;
     margin:  20px auto; 
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
     width: 80%;
     max-width: 600px; /* Ancho máximo */
@@ -93,6 +93,7 @@
         "panel1"
         "panel2" ;
     gap: 5px;
+    max-height: 95%;
   }
   
   .panel1 {
@@ -115,6 +116,6 @@
   .panel2 {
     grid-area: panel2;
     overflow-y: auto;
-    max-height: 700px;
+    max-height: 650px;
   }
 
