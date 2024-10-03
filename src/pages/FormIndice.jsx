@@ -13,6 +13,7 @@ const Formulario = () => {
   const [editando, setEditando] = useState(false);
   const [tipoMensaje, setTipoMensaje] = useState("OK");
   const [mensaje, setMensaje] = useState("");
+  const [formError, setFormError] = useState({});
 
   const [formData, setFormData] = useState({
     folio_1: "1",
@@ -80,6 +81,9 @@ const Formulario = () => {
       ...formData,
       [name]: type === "checkbox" ? checked : value,
     });
+
+    setFormError({ ...formError, [name]: value === "2" ? true : false });
+    console.log(formError);
   };
 
   const presentarMensaje = () => {
@@ -183,6 +187,7 @@ const Formulario = () => {
                   id="searchField"
                   type="number"
                   name="escritura"
+                  min="1"
                   value={formData.escritura}
                   onChange={handleChange}
                 />
@@ -198,6 +203,9 @@ const Formulario = () => {
                   />
                 </button>
               </div>
+              <div className="form__errorLabel">
+                {formError.escritura && <span>Error en la escritura </span>}
+              </div>
             </div>
             <div className="folios">
               <div className="input-group folio_num_inicio">
@@ -211,12 +219,15 @@ const Formulario = () => {
               </div>
               <div className="input-group folio_fv_inicio">
                 <label>Página Inicio :</label>
-                <input
-                  type="text"
+
+                <select
                   name="pag_1"
                   value={formData.pag_1}
                   onChange={handleChange}
-                />
+                >
+                  <option value="Frente">Frente</option>
+                  <option value="Vuelto">Vuelto</option>
+                </select>
               </div>
               <div className="input-group folio_num_final">
                 <label>Folio Final:</label>
@@ -229,12 +240,15 @@ const Formulario = () => {
               </div>
               <div className="input-group folio_fv_final">
                 <label>Página Final:</label>
-                <input
-                  type="text"
+
+                <select
                   name="pag_2"
                   value={formData.pag_2}
                   onChange={handleChange}
-                />
+                >
+                  <option value="Frente">Frente</option>
+                  <option value="Vuelto">Vuelto</option>
+                </select>
               </div>
             </div>
             <div className="input-group lugar">
@@ -296,7 +310,7 @@ const Formulario = () => {
 
             <div className="input-group partes">
               <label>Partes:</label>
-              <input
+              <textarea
                 className="h-100"
                 type="text"
                 name="partes"
@@ -304,9 +318,9 @@ const Formulario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group contrato">
+            <div className="input-group contrato ">
               <label>Contrato:</label>
-              <input
+              <textarea
                 className="h-100"
                 type="text"
                 name="contrato"
