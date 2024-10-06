@@ -16,6 +16,9 @@ $color_border_input: rgb(146, 146, 146);
 $color_border_input_hover: rgb(2, 27, 255);
 $color_background_input: rgb(241, 241, 192);
 
+$color_border_table: rgb(80, 80, 80);
+
+
 //Animaciones
 
 @keyframes heartbeat {
@@ -65,23 +68,21 @@ $color_background_input: rgb(241, 241, 192);
   padding: 0.2rem 1rem;
 }
 
-%input-base{
+%input-base {
   border: 1px solid $color_border_input;
   background-color: $color_background_input;
   border-radius: 0.4rem;
   min-height: 2rem;
   text-indent: 5px;
-
 }
 
-%input-base:hover{
+%input-base:hover {
   border-color: $color_border_input_hover;
 }
 
-%input-base:focus{
+%input-base:focus {
   outline: none;
 }
-
 
 %card_header-base {
   display: flex;
@@ -166,40 +167,32 @@ BLOQUE: CARD
 .card {
   @extend %card_base;
   &__input-group {
-
     @extend %input-group-base;
-    input{
+    input {
       @extend %input-base;
     }
 
-    select{
+    select {
       @extend %input-base;
     }
 
-    textarea{
+    textarea {
       @extend %input-base;
       padding: 10px 5px;
     }
 
     &__searchTextField {
-      
-      
       display: flex;
       flex-direction: row;
-      
 
-      input{
-
+      input {
         @extend %input-base;
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
         margin-left: 0;
         width: 80%;
-        
-
       }
       button {
-        
         background-color: $color_button;
         color: $color_text_label;
         padding: 0px;
@@ -213,36 +206,29 @@ BLOQUE: CARD
           display: flex;
           align-items: center;
           justify-content: center;
-          
         }
       }
-      
+
       button:hover {
         background-color: $color_button_hover;
         color: $color_text_label_hover;
       }
-
-
-
     }
   }
 
-
-
   &__header {
     @extend %card_header-base;
-    &--message{
+    &--message {
       flex-direction: column;
     }
   }
 
   &__body {
     @extend %card_body-base;
-    &--calculator{
+    &--calculator {
       flex-direction: column;
       width: 25rem;
     }
-
   }
 
   &__button-panel {
@@ -254,7 +240,7 @@ BLOQUE: CARD
 
   // MODIFICADOR --LOGIN
   &--login {
-      max-height: 70dvh;
+    max-height: 70dvh;
     &__header {
       img {
         margin: auto;
@@ -271,8 +257,8 @@ BLOQUE: CARD
 
   // MODIFICADOR --MENU
   &--menu {
-    max-height: 70dvh;;
-    
+    max-height: 70dvh;
+
     &__body {
       max-width: 30rem;
     }
@@ -300,8 +286,6 @@ BLOQUE: CARD
   &--calculator {
     max-height: 75dvh;
     max-width: 25rem;
-
-
   }
 
   &--form-indice {
@@ -418,16 +402,15 @@ BLOQUE: CARD
   }
 }
 
-
 //clases para reportes
 
-.contenedor-report {
+.report {
   height: 100vh;
   font-size: 5px;
   background-color: white;
 }
 
-.logo {
+.report__logo-container {
   float: right;
   position: relative;
   top: 15px;
@@ -436,147 +419,143 @@ BLOQUE: CARD
   height: 100px;
 }
 
-.logoTitulo {
-  margin: 30px 0;
-  width: 50%;
-
-  animation: heartbeat 1s infinite;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); /* Halo inicial */
-}
-
-
 .indice {
   text-align: center;
   padding-top: 30px;
+  h2 {
+    font-size: large;
+  }
+  div {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+    p {
+      display: inline;
+      width: 100px;
+    }
+  }
 }
 
-.indice > h2 {
-  font-size: large;
-}
-
-.indice > div {
-  display: flex;
-  width: 90%;
-  margin: auto;
-  justify-content: space-between;
-}
-
-.indice > div > p {
-  display: inline;
-  width: 100px;
-}
-
-// ESTILOS PARA LAS TABLAS DE INDICE
-
-#tabla-index {
-  width: 100%;
-  border: 1px solid #000;
-  border-collapse: collapse;
-  margin: auto;
-}
-
-#tabla-index thead {
-  background-color: rgb(255, 251, 0);
-}
-
-#tabla-index th {
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #000;
-  border-collapse: collapse;
-}
-
-#tabla-index td {
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid #000;
-  border-collapse: collapse;
-}
-
-#tabla-index tr:nth-child(even) {
-  background-color: rgb(240, 242, 243);
-}
-
-// ESTILOS PARA LAS TABLAS DE PANTALLA
-
-#tabla-tarifas {
-  width: 90%;
-  border: 1px solid rgb(22, 5, 97);
-  border-collapse: collapse;
-  margin: auto;
-}
-
-#tabla-tarifas thead {
-  background-color: rgb(255, 251, 0);
-}
-
-#tabla-tarifas th {
-  text-align: center;
-  vertical-align: middle;
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-
-#tabla-tarifas td {
-  vertical-align: middle;
-  border: 1px solid white;
-  border-collapse: collapse;
-}
-
-#tabla-tarifas tbody tr {
-  background-color: white;
-}
-
-#tabla-tarifas tr:nth-child(even) {
-  background-color: gray;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.col-narrow {
-  width: 170px;
-}
-
-.col-wide {
-  width: 300px;
-}
-
-.col-wide-xl {
-  width: 680px;
-}
-
-.pie-container {
+.report-footer {
   display: flex;
   margin: auto;
   margin-top: 50px;
   width: 90%;
   flex-direction: row;
   justify-content: flex-end;
+  .firmas {
+    display: block;
+    width: 200px;
+    text-align: center;
+  }
+
+  .linea {
+    background-color: #000;
+    height: 2px;
+    width: 200px;
+  }
 }
 
-.firmas {
-  display: block;
-  width: 200px;
-  text-align: center;
-}
+// ESTILOS PARA LAS TABLAS DE INDICE
 
-.linea {
-  background-color: #000;
-  height: 2px;
-  width: 200px;
-}
-
-footer {
-  display: flex;
-  justify-content: flex-end;
-  width: 90%;
+.report-table {
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
   margin: auto;
+
+  thead {
+    background-color: rgb(255, 251, 0);
+  }
+
+  th {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+  td {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #000;
+    border-collapse: collapse;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgb(240, 242, 243);
+  }
+}
+
+// ESTILOS PARA LAS TABLAS DE PANTALLA
+
+//#tabla-tarifas
+.table {
+  width: 90%;
+  border-collapse:collapse;
+  margin: 1rem auto ;
+  padding: 0 ;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures that the table corners are properly rounded */
+  border: 1px solid $color_border_table;
+
+  thead {
+    background-color: rgb(85, 47, 223);
+    color: antiquewhite;
+  }
+
+  th {
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid $color_border_table;
+    border-collapse: collapse;
+  }
+
+  td {
+    vertical-align: middle;
+    border: 1px solid $color_border_table;
+    border-collapse: collapse;
+  }
+
+  tbody tr {
+    background-color: white;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(109, 148, 167, 0.767);
+  }
+
+  &--text-center {
+    text-align: center;
+  }
+
+  &--text-right {
+    text-align: right;
+  }
+
+  &--text-left {
+    text-align: left;
+  }
+
+
+  &--col-narrow {
+    width: 170px;
+  }
+
+  &--col-wide {
+    width: 300px;
+  }
+
+  &--col-wide-xl {
+    width: 680px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+    margin: auto;
+  }
 }
 
 @media print {
@@ -604,4 +583,3 @@ footer {
   font-weight: 600;
   letter-spacing: 2px;
 }
-

@@ -5,7 +5,7 @@ export const TablaTarifas = (props) => {
 
   return (
     <>
-      <table id="tabla-tarifas">
+      <table className="table">
         <thead>
           <tr>
             <th>ID</th>
@@ -16,9 +16,9 @@ export const TablaTarifas = (props) => {
         <tbody>
           {registros?(registros.map(({ id, descripcion, tarifa }) => (
             <tr key={id}>
-              <td className="text-center">{id}</td>
-              <td className="text-center">{descripcion}</td>
-              <td className="text-right">{ tarifa.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+              <td className="table--text-center">{id}</td>
+              <td className="table--text-left">{descripcion}</td>
+              <td className="table--text-right">{ tarifa.toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
             </tr>
           ))):(  
             <tr key='1'>

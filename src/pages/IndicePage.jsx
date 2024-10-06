@@ -37,7 +37,7 @@ export const IndicePage = () => {
   return (
     <div className="contenedor-report">
       <div>
-        <img className="logo" src={logo} alt="logo" />
+        <img  src={logo} alt="logo" />
       </div>
       <div className="indice">
         <h1>

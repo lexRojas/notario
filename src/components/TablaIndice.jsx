@@ -33,8 +33,8 @@ export const TablaIndice = (props) => {
 
   if (datos.length > 0) {
     return (
-      <div className="table-contenedor">
-        <table id="tabla-index">
+      <div>
+        <table className="report-table">
           <thead className="table-encabezado">
             <tr>
               <th className="col-narrow">TOMO</th>
