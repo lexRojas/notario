@@ -143,7 +143,7 @@ const Formulario = () => {
   };
 
   return (
-    <div className="contenedor">
+    <div className="container">
       {showMessage ? (
         <div>
           <MensajeOK tipoMensaje={tipoMensaje} mensaje={mensaje} />
@@ -164,14 +164,14 @@ const Formulario = () => {
       ) : (
         <></>
       )}
-      <div className="card-form-indice">
-        <div className="card-cuerpo">
-          <form className="form_indice">
-            <div className="titulo_form card-titulo">
-              <h1>Ingreso de Indices</h1>
-            </div>
+      <div className="card card--form-indice">
+        <div className="card__body card--form-indice__body">
+          <div className="card__header ">
+            <h1>Ingreso de Indices</h1>
+          </div>
 
-            <div className="input-group tomo">
+          <form className="card--form-indice__body__form-layout">
+            <div className="card__input-group tomo">
               <label>Tomo:</label>
               <input
                 type="number"
@@ -180,11 +180,10 @@ const Formulario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group escritura">
+            <div className="card__input-group  escritura">
               <label>Escritura:</label>
-              <div id="searchTextField">
+              <div className="card__input-group__searchTextField ">
                 <input
-                  id="searchField"
                   type="number"
                   name="escritura"
                   min="1"
@@ -192,9 +191,7 @@ const Formulario = () => {
                   onChange={handleChange}
                 />
                 <button
-                  id="searchButton"
                   type="button"
-                  className="boton_load_index  "
                   onClick={browser}
                 >
                   <img
@@ -208,7 +205,7 @@ const Formulario = () => {
               </div>
             </div>
             <div className="folios">
-              <div className="input-group folio_num_inicio">
+              <div className="card__input-group folio_num_inicio">
                 <label>Folio Inicio:</label>
                 <input
                   type="number"
@@ -217,7 +214,7 @@ const Formulario = () => {
                   onChange={handleChange}
                 />
               </div>
-              <div className="input-group folio_fv_inicio">
+              <div className="card__input-group folio_fv_inicio">
                 <label>Página Inicio :</label>
 
                 <select
@@ -229,7 +226,7 @@ const Formulario = () => {
                   <option value="Vuelto">Vuelto</option>
                 </select>
               </div>
-              <div className="input-group folio_num_final">
+              <div className="card__input-group folio_num_final">
                 <label>Folio Final:</label>
                 <input
                   type="number"
@@ -238,7 +235,7 @@ const Formulario = () => {
                   onChange={handleChange}
                 />
               </div>
-              <div className="input-group folio_fv_final">
+              <div className="card__input-group folio_fv_final">
                 <label>Página Final:</label>
 
                 <select
@@ -251,7 +248,7 @@ const Formulario = () => {
                 </select>
               </div>
             </div>
-            <div className="input-group lugar">
+            <div className="card__input-group lugar">
               <label>Lugar:</label>
               <input
                 type="text"
@@ -261,7 +258,7 @@ const Formulario = () => {
               />
             </div>
 
-            <div className="input-group fecha">
+            <div className="card__input-group fecha">
               <label>Fecha:</label>
               <input
                 type="date"
@@ -271,7 +268,7 @@ const Formulario = () => {
               />
             </div>
 
-            <div className="input-group firmas_frm">
+            <div className="card__input-group firmas_frm">
               <label>Firmas:</label>
               <input
                 type="number"
@@ -283,7 +280,7 @@ const Formulario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group hora">
+            <div className="card__input-group hora">
               <label>Hora:</label>
               <input
                 type="number"
@@ -295,7 +292,7 @@ const Formulario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group minutos">
+            <div className="card__input-group minutos">
               <label>Minutos:</label>
               <input
                 type="number"
@@ -308,7 +305,7 @@ const Formulario = () => {
               />
             </div>
 
-            <div className="input-group partes">
+            <div className="card__input-group partes">
               <label>Partes:</label>
               <textarea
                 className="h-100"
@@ -318,7 +315,7 @@ const Formulario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group contrato ">
+            <div className="card__input-group contrato ">
               <label>Contrato:</label>
               <textarea
                 className="h-100"
@@ -328,7 +325,7 @@ const Formulario = () => {
                 onChange={handleChange}
               />
             </div>
-            <div className="input-group entero">
+            <div className="card__input-group entero">
               <label>Entero:</label>
               <input
                 type="text"
@@ -339,11 +336,11 @@ const Formulario = () => {
             </div>
           </form>
         </div>
-        <div className="card-buttonPanel">
-          <button className="my-button" type="submit" onClick={handleSubmit}>
+        <div className="card__button-panel">
+          <button className="card__button-panel__button" type="submit" onClick={handleSubmit}>
             Guardar
           </button>
-          <button className="my-button" type="button" onClick={handleCancel}>
+          <button className="card__button-panel__button" type="button" onClick={handleCancel}>
             Cancelar
           </button>
         </div>

@@ -143,12 +143,7 @@ body {
 }
 
 .card-cuerpo-login {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-bottom: 10px;
-  padding: 20px;
-  min-width: 100%;
 }
 
 
@@ -233,18 +228,24 @@ input[type=number]::-webkit-outer-spin-button {
   height: 30px;
 }
 
+// HAY QUE ARREGLAR Y ORGANIZAR LOS CSS 
 
+input, select {
+  height: 40px; /* Altura que deseas */
+  line-height: 40px; /* Asegura que el texto esté centrado verticalmente */
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  appearance: none; /* Elimina el estilo por defecto del select en algunos navegadores */
+}
 
 select {
-  padding: 1rem 0;
-  text-align: center;
-  text-indent: 12px;
+  padding-right: 30px; /* Aumenta el espacio para el ícono de flecha */
 }
 
-select > option {
-  text-align: left;
-  text-indent: 2px;
-}
+
 
 .input-group > label {
   font-weight: 600;

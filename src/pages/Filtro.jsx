@@ -41,15 +41,15 @@ export const Filtro = () => {
     }
 
   return (
-    <div className="contenedor">
+    <div className="container">
       <div className="card">
 
-        <div className="card-titulo">
+        <div className="card__header">
             <h1>Indice Notarial</h1>
         </div>
-        <div className="card-cuerpo">
+        <div className="card__body">
           
-            <div className="input-group">
+            <div className="card__input-group">
                 <label htmlFor="mes">Mes</label>
                 <select ref={mes} defaultValue={m}> 
                   <option key = '0' value="Enero"> Enero</option>
@@ -67,7 +67,7 @@ export const Filtro = () => {
                 </select>
             </div>
 
-            <div className="input-group">
+            <div className="card__input-group">
                 <label htmlFor="quincena">Quincena</label>
                 <select ref={quincena} defaultValue={q}>
                   <option key='1' value="Primera">Primera</option>
@@ -76,18 +76,18 @@ export const Filtro = () => {
                 </select>
             </div>
 
-            <div className="input-group" id="flex-small">
+            <div className="card__input-group" id="flex-small">
                 <label htmlFor="año">Año</label>
                 <input type="number" defaultValue={y} ref ={year} name="año" id="ano" />
             </div>
 
         </div>
-        <div className="card-buttonPanel">
-                <button className="my-button"
+        <div className="card__button-panel">
+                <button className="card__button-panel__button"
                         onClick={generarReporte}
                 > Generar </button>
                 <button 
-                  className="my-button"
+                  className="card__button-panel__button"
                   onClick={irMenu}
                 > Cancelar </button>
             </div>

@@ -3,9 +3,9 @@ import logo from '../images/logo.png'
 
 export const ErrorAcceso = () => {
   return (
-    <div className="contenedor">
-      <div className="card-menu">
-        <div className="card-titulo">
+    <div className="container">
+      <div className="card">
+        <div className="card__header card__header--message">
             <img src={logo} alt="logo" className="logoTitulo" />
           <h2>Error no puede ingresar</h2>
         </div>

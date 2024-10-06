@@ -55,7 +55,7 @@ const Filtro = (props) => {
 
   return (
     <>
-      <div className="input-group">
+      <div className="card__input-group">
         <label htmlFor="reg_select"> Registro:</label>
         <select name="registros" id="reg_select" onChange={seleccion_registro}>
           {registros ? (
@@ -70,7 +70,7 @@ const Filtro = (props) => {
           )}
         </select>
       </div>
-      <div className="input-group">
+      <div className="card__input-group">
         <label htmlFor="reg_actos"> Acto:</label>
         <select name="actos" id="reg_actos" onChange={seleccion_actos}>
           {actos ? (
@@ -85,7 +85,7 @@ const Filtro = (props) => {
           )}
         </select>
       </div>
-      <div className="input-group">
+      <div className="card__input-group">
         <label htmlFor="monto"> Digite el monto:</label>
         <input type="number" onChange={cambia_monto} />
       </div>

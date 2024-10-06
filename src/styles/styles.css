@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -164,12 +165,7 @@ body {
 }
 
 .card-cuerpo-login {
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin-bottom: 10px;
-  padding: 20px;
-  min-width: 100%;
 }
 
 .card-buttonPanel {
@@ -247,15 +243,21 @@ input[type=number]::-webkit-outer-spin-button {
   height: 30px;
 }
 
-select {
-  padding: 1rem 0;
-  text-align: center;
-  text-indent: 12px;
+input, select {
+  height: 40px; /* Altura que deseas */
+  line-height: 40px; /* Asegura que el texto esté centrado verticalmente */
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none; /* Elimina el estilo por defecto del select en algunos navegadores */
 }
 
-select > option {
-  text-align: left;
-  text-indent: 2px;
+select {
+  padding-right: 30px; /* Aumenta el espacio para el ícono de flecha */
 }
 
 .input-group > label {

@@ -6,7 +6,7 @@ import store from './store/store';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import './styles/normalize.css' // se deben de aplicar primero
-import './styles/styles.css'
+import './styles/styles-BEM.css'
 
 import App from './App';
 import { Filtro } from './pages/Filtro';

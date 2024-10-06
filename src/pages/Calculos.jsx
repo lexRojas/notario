@@ -1,12 +1,11 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 import Filtro from "../components/Calculos/Filtro";
 import { TablaTarifas } from "../components/Calculos/TablaTarifas";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const Calculos = () => {
-
-  const navegar = useNavigate()
+  const navegar = useNavigate();
 
   const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
 
@@ -16,28 +15,27 @@ const Calculos = () => {
   const [registros, setRegistros] = useState(null);
 
   const calcular = () => {
-    setCalcular_Flag(true)
+    setCalcular_Flag(true);
   };
 
-  const irMenu=()=>{
-    navegar("/menu")
-  }
- 
+  const irMenu = () => {
+    navegar("/menu");
+  };
 
   useEffect(() => {
     if (calcular_flag) {
       axios
-        .get(URL+"get_monto", {
+        .get(URL + "get_monto", {
           params: { id_acto: id_acto, monto: monto },
           headers: {
-            'Cache-Control': 'no-store',
-            'Pragma': 'no-cache',
-            'Expires': '0'
-          }
+            "Cache-Control": "no-store",
+            Pragma: "no-cache",
+            Expires: "0",
+          },
         })
         .then((res) => {
           setRegistros(res.data);
-          setCalcular_Flag(false)
+          setCalcular_Flag(false);
         });
     }
 
@@ -45,27 +43,25 @@ const Calculos = () => {
   }, [calcular]);
 
   return (
-    <div className="contenedor">
-      <div className="card">
-        <div className="card-titulo">
+    <div className="container">
+      <div className="card card--calculator">
+        <div className="card__header">
           <h1>Calculadora Notarial</h1>
         </div>
-        <div className="card-cuerpo">
-            <Filtro setId_acto={setId_acto} setMonto={setMonto}/>
+        <div className="card__body">
+          <Filtro setId_acto={setId_acto} setMonto={setMonto} />
+          {registros ? <TablaTarifas registros={registros} /> : <></>}
         </div>
-        <div className="card-cuerpo">
-            {registros?(<TablaTarifas registros={registros} />):(<></>) }
+        <div className="card__button-panel">
+          <button className="card__button-panel__button" onClick={calcular}>
+            {" "}
+            Calcular{" "}
+          </button>
+          <button className="card__button-panel__button" onClick={irMenu}>
+            {" "}
+            Cancelar{" "}
+          </button>
         </div>
-        <div className="card-buttonPanel">
-        <button className="my-button" onClick={calcular}>
-          {" "}
-          Calcular{" "}
-        </button>
-        <button 
-                  className="my-button"
-                  onClick={irMenu}
-                > Cancelar </button>
-      </div>
       </div>
     </div>
   );

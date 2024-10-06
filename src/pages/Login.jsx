@@ -43,22 +43,23 @@ export const Login = () => {
   };
 
   return (
-    <div className="contenedor">
-      <div className="card-menu">
-        <div className="card-titulo">
+    <div className="container">
+      <div className="card card--login">
+        <div className="card__header card--login__header">
           <img src={logo} alt="logo" className="logoTitulo" />
         </div>
-        <div className="card-cuerpo-login">
-          <div className="input-group">
+        <div className=" card__body card--login__body">
+          <div className="card__input-group">
             <label htmlFor="usuario">Usuario:</label>
             <input type="text" name="usuario" id="usuario" ref={user} />
-
+          </div>
+          <div className="card__input-group">
             <label htmlFor="password">Clave:</label>
             <input type="password" name="password" id="password" ref={pass} />
           </div>
         </div>
-        <div className="card-buttonPanel">
-          <button className="my-button" onClick={irMenu}>
+        <div className="card__button-panel">
+          <button className="card__button-panel__button" onClick={irMenu}>
             {" "}
             Aceptar{" "}
           </button>

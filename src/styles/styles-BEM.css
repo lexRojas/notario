@@ -1,0 +1,465 @@
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9); /* Halo inicial */
+  }
+  5% {
+    transform: scale(0.92);
+  }
+  17% {
+    transform: scale(0.9);
+  }
+  25% {
+    transform: scale(0.96);
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 100dvw;
+  margin: auto;
+  background: white;
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(2.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  justify-content: center;
+  overflow: auto;
+}
+
+.card__input-group {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 1;
+  color: darkblue;
+  flex-direction: column;
+  flex-basis: 50px;
+  min-width: 100%;
+  padding: 0.2rem 1rem;
+}
+
+.card__input-group__searchTextField input, .card__input-group textarea, .card__input-group select, .card__input-group input {
+  border: 1px solid rgb(146, 146, 146);
+  background-color: rgb(241, 241, 192);
+  border-radius: 0.4rem;
+  min-height: 2rem;
+  text-indent: 5px;
+}
+
+.card__input-group__searchTextField input:hover, .card__input-group textarea:hover, .card__input-group select:hover, .card__input-group input:hover {
+  border-color: rgb(2, 27, 255);
+}
+
+.card__input-group__searchTextField input:focus, .card__input-group textarea:focus, .card__input-group select:focus, .card__input-group input:focus {
+  outline: none;
+}
+
+.card__header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: darkblue;
+  padding-top: 1rem;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  min-width: 100%;
+}
+
+.card__button-panel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  min-width: 100%;
+  padding: 1.5rem;
+  gap: 0.5rem;
+}
+
+.card__button-panel__button {
+  flex-grow: 1;
+  flex-shrink: 1;
+  margin: 5px 0px;
+  flex-basis: 1rem;
+  border-radius: 2px;
+  background-color: rgb(20, 20, 59);
+  color: white;
+  min-height: 4rem;
+}
+.card__button-panel__button:hover {
+  background-color: rgb(39, 39, 95);
+  color: rgb(255, 238, 0);
+  font-size: 110%;
+  cursor: pointer;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../images/justicia.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 1px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.507);
+  min-height: 100dvh;
+  min-width: 100dvw;
+  justify-items: center;
+  align-items: center;
+}
+
+/*-------------------------
+BLOQUE: CARD     
+-------------------------*/
+.card__input-group textarea {
+  padding: 10px 5px;
+}
+.card__input-group__searchTextField {
+  display: flex;
+  flex-direction: row;
+}
+.card__input-group__searchTextField input {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-left: 0;
+  width: 80%;
+}
+.card__input-group__searchTextField button {
+  background-color: rgb(20, 20, 59);
+  color: darkblue;
+  padding: 0px;
+  margin-left: 0px;
+  border-top-right-radius: 0.4rem;
+  border-bottom-right-radius: 0.4rem;
+}
+.card__input-group__searchTextField button img {
+  height: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card__input-group__searchTextField button:hover {
+  background-color: rgb(39, 39, 95);
+  color: rgb(255, 238, 0);
+}
+.card__header--message {
+  flex-direction: column;
+}
+.card__body--calculator {
+  flex-direction: column;
+  width: 25rem;
+}
+.card--login {
+  max-height: 70dvh;
+}
+.card--login__header img {
+  margin: auto;
+  width: 35%;
+  animation: heartbeat 1s infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
+}
+.card--login__body {
+  max-width: 15rem;
+}
+.card--menu {
+  max-height: 70dvh;
+}
+.card--menu__body {
+  max-width: 30rem;
+}
+.card--menu__menu-item {
+  width: 7rem;
+  height: 7rem;
+  margin: 0.6rem;
+  text-align: center;
+}
+.card--menu__menu-item span {
+  color: darkblue;
+  font-weight: bold;
+}
+.card--menu__menu-item img {
+  width: 6rem;
+  height: 6rem;
+}
+.card--menu__menu-item:hover {
+  color: rgb(255, 238, 0);
+}
+.card--calculator {
+  max-height: 75dvh;
+  max-width: 25rem;
+}
+.card--form-indice {
+  max-height: 90dvh;
+  max-width: 35rem;
+}
+.card--form-indice__body__form-layout {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(50px, 1fr));
+  gap: 2px 2px;
+  grid-auto-flow: row;
+  grid-template-areas: "tomo blank boton_load_index" "escritura blank ." "folios folios folios" "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4";
+}
+.card--form-indice__body__form-layout .folios {
+  display: grid;
+  grid-template-columns: 20% 25% 20% 25%;
+  grid-template-rows: auto;
+  grid-template-areas: "folio_num_inicio folio_fv_inicio folio_num_final folio_fv_final";
+  grid-area: folios;
+  justify-content: space-between;
+}
+@media (max-width: 500px) {
+  .card--form-indice__body__form-layout .folios {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-areas: "folio_num_inicio" "folio_fv_inicio" "folio_num_final" "folio_fv_final";
+  }
+}
+.card--form-indice__body__form-layout .blank {
+  grid-area: blank;
+}
+.card--form-indice__body__form-layout .tomo {
+  grid-area: tomo;
+}
+.card--form-indice__body__form-layout .escritura {
+  grid-area: escritura;
+  display: flex;
+  width: 100%;
+}
+.card--form-indice__body__form-layout .folio_num_inicio {
+  grid-area: folio_num_inicio;
+}
+.card--form-indice__body__form-layout .folio_num_final {
+  grid-area: folio_num_final;
+}
+.card--form-indice__body__form-layout .folio_fv_inicio {
+  grid-area: folio_fv_inicio;
+}
+.card--form-indice__body__form-layout .folio_fv_final {
+  grid-area: folio_fv_final;
+}
+.card--form-indice__body__form-layout .lugar {
+  grid-area: lugar;
+}
+.card--form-indice__body__form-layout .fecha {
+  grid-area: fecha;
+}
+.card--form-indice__body__form-layout .firmas_frm {
+  grid-area: firmas;
+  display: flex;
+  flex-direction: column;
+}
+.card--form-indice__body__form-layout .hora {
+  grid-area: hora;
+}
+.card--form-indice__body__form-layout .minutos {
+  grid-area: minutos;
+}
+.card--form-indice__body__form-layout .partes {
+  grid-area: partes;
+}
+.card--form-indice__body__form-layout .contrato {
+  grid-area: contrato;
+}
+.card--form-indice__body__form-layout .entero {
+  grid-area: entero;
+}
+.card--form-indice__body__form-layout .form__errorLabel {
+  color: red;
+  margin-top: 2px;
+}
+
+.contenedor-report {
+  height: 100vh;
+  font-size: 5px;
+  background-color: white;
+}
+
+.logo {
+  float: right;
+  position: relative;
+  top: 15px;
+  right: 65px;
+  width: 90px;
+  height: 100px;
+}
+
+.logoTitulo {
+  margin: 30px 0;
+  width: 50%;
+  animation: heartbeat 1s infinite;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); /* Halo inicial */
+}
+
+.indice {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.indice > h2 {
+  font-size: large;
+}
+
+.indice > div {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+}
+
+.indice > div > p {
+  display: inline;
+  width: 100px;
+}
+
+#tabla-index {
+  width: 100%;
+  border: 1px solid #000;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+#tabla-index thead {
+  background-color: rgb(255, 251, 0);
+}
+
+#tabla-index th {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+#tabla-index td {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+#tabla-index tr:nth-child(even) {
+  background-color: rgb(240, 242, 243);
+}
+
+#tabla-tarifas {
+  width: 90%;
+  border: 1px solid rgb(22, 5, 97);
+  border-collapse: collapse;
+  margin: auto;
+}
+
+#tabla-tarifas thead {
+  background-color: rgb(255, 251, 0);
+}
+
+#tabla-tarifas th {
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+#tabla-tarifas td {
+  vertical-align: middle;
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+#tabla-tarifas tbody tr {
+  background-color: white;
+}
+
+#tabla-tarifas tr:nth-child(even) {
+  background-color: gray;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.col-narrow {
+  width: 170px;
+}
+
+.col-wide {
+  width: 300px;
+}
+
+.col-wide-xl {
+  width: 680px;
+}
+
+.pie-container {
+  display: flex;
+  margin: auto;
+  margin-top: 50px;
+  width: 90%;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.firmas {
+  display: block;
+  width: 200px;
+  text-align: center;
+}
+
+.linea {
+  background-color: #000;
+  height: 2px;
+  width: 200px;
+}
+
+footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: auto;
+}
+
+@media print {
+  body {
+    background: #fff !important;
+  }
+  footer {
+    display: none;
+  }
+  h1 {
+    font-size: medium;
+  }
+  h2 {
+    font-size: smaller;
+  }
+}
+@page {
+  margin: 1.5cm;
+  size: 8.5in 13in landscase;
+}
+.nocartule-title {
+  font-weight: 600;
+  letter-spacing: 2px;
+}/*# sourceMappingURL=styles-BEM.css.map */
