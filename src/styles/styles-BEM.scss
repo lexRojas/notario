@@ -404,8 +404,9 @@ BLOQUE: CARD
 
 //clases para reportes
 
-.report {
-  height: 100vh;
+.report-container {
+  height: 100dvh;
+  width: 100dvw;
   font-size: 5px;
   background-color: white;
 }
@@ -414,9 +415,13 @@ BLOQUE: CARD
   float: right;
   position: relative;
   top: 15px;
+  left: -80px;
   right: 65px;
   width: 90px;
   height: 100px;
+  img{
+    height: 95%;
+  }
 }
 
 .indice {
@@ -536,7 +541,6 @@ BLOQUE: CARD
   &--text-left {
     text-align: left;
   }
-
 
   &--col-narrow {
     width: 170px;

@@ -28,7 +28,7 @@ export const Menu = () => {
                 {" "}
                 <img src={reportIco} alt="Reportes"></img>{" "}
               </Link>
-              <span>Indice</span>
+              <span>Reportes</span>
             </div>
             <div className="card--menu__menu-item">
               <Link to="/calculos">
