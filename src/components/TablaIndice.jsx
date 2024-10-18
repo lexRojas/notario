@@ -16,11 +16,12 @@ export const TablaIndice = (props) => {
           params: {
             fecha_inicio: fechaInicio,
             fecha_final: fechaFinal,
-          }
+          },
         })
         .then((res) => {
-          console.log('set de datos ....')
+          console.log("set de datos ....");
           console.log(res.data);
+
           setdatos(res.data);
         })
         .catch((error) => {
@@ -35,35 +36,45 @@ export const TablaIndice = (props) => {
     return (
       <div className="">
         <table className="report-table">
-          <thead >
+          <thead>
             <tr>
-              <th className="col-narrow">TOMO</th>
-              <th className="col-narrow">FOL.INICIAL</th>
-              <th className="col-narrow">FOL.FINAL</th>
-              <th className="col-narrow">NUMERO</th>
-              <th className="col-narrow">FECHA</th>
-              <th className="col-narrow">HORA</th>
-              <th className="col-wide">ACTO O CONTRATO</th>
-              <th className="col-wide-xl">PARTES</th>
+              <th className="report-table--col-170px">TOMO</th>
+              <th className="report-table--col-170px">FOL.INICIAL</th>
+              <th className="report-table--col-170px">FOL.FINAL</th>
+              <th className="report-table--col-170px">NUMERO</th>
+              <th className="report-table--col-170px">FECHA</th>
+              <th className="report-table--col-170px">HORA</th>
+              <th className="report-table--col-300px">ACTO O CONTRATO</th>
+              <th className="report-table--col-600px">PARTES</th>
             </tr>
           </thead>
           <tbody>
-            {datos.map(
-              ({
-                ValoresUsuales
-               }) => (
-                <tr key={ValoresUsuales.escritura}>
-                  <td> {ValoresUsuales.tomo} </td>
-                  <td> {ValoresUsuales.folio_1 + ValoresUsuales.pag_1.substring(0, 1)} </td>
-                  <td> {ValoresUsuales.folio_2 + ValoresUsuales.pag_2.substring(0, 1)} </td>
-                  <td> {ValoresUsuales.escritura} </td>
-                  <td> {ValoresUsuales.fecha} </td>
-                  <td> {ValoresUsuales.hora + ":" + ValoresUsuales.minutos} </td>
-                  <td> {ValoresUsuales.contrato} </td>
-                  <td> {ValoresUsuales.partes} </td>
-                </tr>
-              )
-            )}
+            {datos.map(({ ValoresUsuales }) => (
+               ValoresUsuales.escritura<999 && <tr key={ValoresUsuales.escritura}>
+                <td> {ValoresUsuales.tomo} </td>
+                <td>
+                  {" "}
+                  {ValoresUsuales.folio_1 +
+                    ValoresUsuales.pag_1.substring(0, 1)}{" "}
+                </td>
+                <td>
+                  {" "}
+                  {ValoresUsuales.folio_2 +
+                    ValoresUsuales.pag_2.substring(0, 1)}{" "}
+                </td>
+                <td> {ValoresUsuales.escritura} </td>
+                <td> {ValoresUsuales.fecha} </td>
+                <td>
+                  {" "}
+                  {String(ValoresUsuales.hora).padStart(2, "0") +
+                    ":" +
+                    String(ValoresUsuales.minutos).padStart(2, "0")}{" "}
+                </td>
+                <td> {ValoresUsuales.contrato} </td>
+                <td> {ValoresUsuales.partes} </td>
+              </tr>
+            ))}
+
             <tr>
               <td colSpan={8}> Ultima Línea </td>
             </tr>
@@ -75,21 +86,21 @@ export const TablaIndice = (props) => {
     return (
       <div className="">
         <table className="report-table">
-          <thead className="table-encabezado">
+          <thead className="">
             <tr>
-              <th className="col-narrow">TOMO</th>
-              <th className="col-narrow">FOL.INICIAL</th>
-              <th className="col-narrow">FOL.FINAL</th>
-              <th className="col-narrow">NUMERO</th>
-              <th className="col-narrow">FECHA</th>
-              <th className="col-narrow">HORA</th>
-              <th className="col-wide">ACTO O CONTRATO</th>
-              <th className="col-wide-xl">PARTES</th>
+              <th className="report-table--col-170px">TOMO</th>
+              <th className="report-table--col-170px">FOL.INICIAL</th>
+              <th className="report-table--col-170px">FOL.FINAL</th>
+              <th className="report-table--col-170px">NUMERO</th>
+              <th className="report-table--col-170px">FECHA</th>
+              <th className="report-table--col-170px">HORA</th>
+              <th className="report-table--col-300px">ACTO O CONTRATO</th>
+              <th className="report-table--col-600px">PARTES</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td className="nocartule-title" colSpan={8}>
+              <td className="report-table__nocartule-title" colSpan={8}>
                 {" "}
                 -- NO CARTULE ESTA QUINCENA --{" "}
               </td>

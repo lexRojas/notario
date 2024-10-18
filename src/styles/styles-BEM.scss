@@ -18,7 +18,6 @@ $color_background_input: rgb(241, 241, 192);
 
 $color_border_table: rgb(80, 80, 80);
 
-
 //Animaciones
 
 @keyframes heartbeat {
@@ -38,7 +37,7 @@ $color_border_table: rgb(80, 80, 80);
   }
 }
 
-//mixing utilitarios
+//Bases de estilos 
 
 %card_base {
   display: flex;
@@ -54,8 +53,6 @@ $color_border_table: rgb(80, 80, 80);
   justify-content: center;
   overflow: auto;
 }
-
-//Bases
 
 %input-group-base {
   display: flex;
@@ -402,67 +399,72 @@ BLOQUE: CARD
   }
 }
 
-//clases para reportes
+/*-------------------------
+BLOQUE: REPORTE      
+-------------------------*/
 
 .report-container {
   height: 100dvh;
   width: 100dvw;
   font-size: 5px;
   background-color: white;
-}
 
-.report__logo-container {
-  float: right;
-  position: relative;
-  top: 15px;
-  left: -80px;
-  right: 65px;
-  width: 90px;
-  height: 100px;
-  img{
-    height: 95%;
-  }
-}
-
-.indice {
-  text-align: center;
-  padding-top: 30px;
-  h2 {
-    font-size: large;
-  }
-  div {
-    display: flex;
-    width: 90%;
-    margin: auto;
-    justify-content: space-between;
-    p {
-      display: inline;
-      width: 100px;
+  &__logo-container {
+    float: right;
+    position: relative;
+    top: 15px;
+    left: -80px;
+    right: 65px;
+    width: 90px;
+    height: 100px;
+    img {
+      height: 95%;
     }
   }
-}
 
-.report-footer {
-  display: flex;
-  margin: auto;
-  margin-top: 50px;
-  width: 90%;
-  flex-direction: row;
-  justify-content: flex-end;
-  .firmas {
-    display: block;
-    width: 200px;
+  &__encabezado {
     text-align: center;
+    padding-top: 30px;
+    h2 {
+      font-size: large;
+    }
+    div {
+      display: flex;
+      width: 90%;
+      margin: auto;
+      justify-content: space-between;
+      p {
+        display: inline;
+        width: 100px;
+      }
+    }
   }
 
-  .linea {
-    background-color: #000;
-    height: 2px;
-    width: 200px;
+  &__footer {
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+    width: 90%;
+    flex-direction: row;
+    justify-content: flex-end;
+    .firmas {
+      display: block;
+      width: 200px;
+      text-align: center;
+    }
+    .linea {
+      background-color: #000;
+      height: 2px;
+      width: 200px;
+    }
   }
+        
+
 }
 
-// ESTILOS PARA LAS TABLAS DE INDICE
+/*-------------------------
+BLOQUE: TABLA DEL INDICE REPORTE     
+-------------------------*/
 
 .report-table {
   width: 100%;
@@ -490,16 +492,33 @@ BLOQUE: CARD
   tr:nth-child(even) {
     background-color: rgb(240, 242, 243);
   }
+
+  &--col-170px {
+    width: 170px;
+  }
+
+  &--col-300px {
+    width: 300px;
+  }
+
+  &--col-600px {
+    width: 680px;
+  }
+
+  &__nocartule-title {
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
 }
 
-// ESTILOS PARA LAS TABLAS DE PANTALLA
-
-//#tabla-tarifas
+/*-------------------------
+BLOQUE: TABLA DE VER TARIFAS     
+-------------------------*/
 .table {
   width: 90%;
-  border-collapse:collapse;
-  margin: 1rem auto ;
-  padding: 0 ;
+  border-collapse: collapse;
+  margin: 1rem auto;
+  padding: 0;
   border-radius: 10px;
   overflow: hidden; /* Ensures that the table corners are properly rounded */
   border: 1px solid $color_border_table;
@@ -542,18 +561,6 @@ BLOQUE: CARD
     text-align: left;
   }
 
-  &--col-narrow {
-    width: 170px;
-  }
-
-  &--col-wide {
-    width: 300px;
-  }
-
-  &--col-wide-xl {
-    width: 680px;
-  }
-
   footer {
     display: flex;
     justify-content: flex-end;
@@ -561,6 +568,7 @@ BLOQUE: CARD
     margin: auto;
   }
 }
+
 
 @media print {
   body {
@@ -581,9 +589,4 @@ BLOQUE: CARD
 @page {
   margin: 1.5cm;
   size: 8.5in 13in landscase;
-}
-
-.nocartule-title {
-  font-weight: 600;
-  letter-spacing: 2px;
 }

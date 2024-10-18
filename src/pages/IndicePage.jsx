@@ -36,10 +36,10 @@ export const IndicePage = () => {
 
   return (
     <div className="report-container">
-      <div className="report__logo-container">
+      <div className="report-container__logo-container">
         <img  src={logo} alt="logo" />
       </div>
-      <div className="indice">
+      <div className="report-container__encabezado">
         <h1>
           Indice de instrumentos autorizados por el notario Rojas Chaves,
           Rodrigo{" "}
@@ -55,14 +55,14 @@ export const IndicePage = () => {
         <TablaIndice fechaInicio={strFechaInicio} fechaFinal={strFechaFinal} />
       </div>
 
-      <div className="report-footer">
+      <div className="report-container__footer">
         <div className="firmas">
           <p className="linea"></p>
           <p>Rodrigo Rojas Chaves</p>
           <p>Fecha: {fechaHoy.toISOString().substring(0,10) }</p>
         </div>
       </div>
-      <footer className="report-footer">
+      <footer className="report-container__footer">
         <Link to='/indice'>Regresar</Link>
       </footer>
     </div>

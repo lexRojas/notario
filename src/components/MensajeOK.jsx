@@ -8,13 +8,12 @@ export const MensajeOK = (props) => {
   return (
     <div className="modal">
       <div className="modal-menssage">
-        {tipoMensaje === "OK" ? (
+        {tipoMensaje.toUpperCase() === "OK" ? (
           <img src={logoOk} alt="Ok" />
         ) : (
           <img src={logoCancel} alt="Ok" />
         )}
-
-        {tipoMensaje === "OK" ?(<span> Guardado !</span>) :(<span> {mensaje} </span>)}
+        <span>{mensaje ? mensaje :  tipoMensaje.toUpperCase() === "OK" ? "Guardado OK" : "Error!"} </span>
       </div>
     </div>
   );

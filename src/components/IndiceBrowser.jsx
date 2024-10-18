@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/modalPanel.css";
 
 export const IndiceBrowser = (props) => {
-  const { setverBrowser, loadRecord, setEditando } = props;
+  const { setverBrowser, loadRecord, setEditando, fijarValoresPorDefecto } = props;
 
   const [datos, setdatos] = useState([]);
   const URL = "https://mysql-backend-8bc5e268b39e.herokuapp.com/";
@@ -36,7 +36,8 @@ export const IndiceBrowser = (props) => {
 
   const salir = () => {
     setverBrowser(false);
-    setEditando(false);
+    fijarValoresPorDefecto();
+    
   };
 
 

@@ -14,6 +14,7 @@ const Formulario = () => {
   const [tipoMensaje, setTipoMensaje] = useState("OK");
   const [mensaje, setMensaje] = useState("");
   const [formError, setFormError] = useState({});
+  const [fieldDisable, setfieldDisable] = useState(false);
 
   const [formData, setFormData] = useState({
     folio_1: "1",
@@ -49,6 +50,10 @@ const Formulario = () => {
       firmas: "1",
       lugar: "",
     });
+
+    setfieldDisable(false);
+    setEditando(false);
+    setMensaje(null);
   };
 
   const loadRecord = (registro) => {
@@ -73,6 +78,7 @@ const Formulario = () => {
     };
 
     setFormData(miRegistro);
+    setfieldDisable(true);
   };
 
   const handleChange = (e) => {
@@ -86,7 +92,7 @@ const Formulario = () => {
     console.log(formError);
   };
 
-  const presentarMensaje = () => {
+  const presentarMensaje = async () => {
     setVisibleMensaje(true);
 
     setTimeout(() => {
@@ -120,7 +126,8 @@ const Formulario = () => {
       await axios
         .post(endpointPost, formData)
         .then((res) => {
-          setTipoMensaje("OK");
+          console.log("entramos a guardar datos... ")
+          setTipoMensaje("ok");
           presentarMensaje();
         })
         .catch((e) => {
@@ -136,6 +143,30 @@ const Formulario = () => {
     // Lógica para manejar la acción de cancelar
     fijarValoresPorDefecto();
     navegar("/menu");
+  };
+
+  const eliminar = async () => {
+    const endpointDelete = `${URL}indice/${formData.id}`;
+
+    console.log(endpointDelete);
+
+    if (editando) {
+      try {
+        const response = await axios.delete(endpointDelete);
+
+        setTipoMensaje("OK");
+        setMensaje(response.data.message)
+        presentarMensaje();
+        
+        
+        
+      } catch (e) {
+        setTipoMensaje("Error");
+        console.log(e);
+        setMensaje(e);
+        presentarMensaje();
+      }
+    }
   };
 
   const browser = () => {
@@ -159,6 +190,7 @@ const Formulario = () => {
             setverBrowser={setverBrowser}
             loadRecord={loadRecord}
             setEditando={setEditando}
+            fijarValoresPorDefecto={fijarValoresPorDefecto}
           />{" "}
         </div>
       ) : (
@@ -178,6 +210,7 @@ const Formulario = () => {
                 name="tomo"
                 value={formData.tomo}
                 onChange={handleChange}
+                disabled={fieldDisable}
               />
             </div>
             <div className="card__input-group  escritura">
@@ -189,11 +222,9 @@ const Formulario = () => {
                   min="1"
                   value={formData.escritura}
                   onChange={handleChange}
+                  disabled={fieldDisable}
                 />
-                <button
-                  type="button"
-                  onClick={browser}
-                >
+                <button type="button" onClick={browser}>
                   <img
                     src="https://img.icons8.com/material-outlined/24/ffffff/search--v1.png"
                     alt="Buscar"
@@ -337,10 +368,29 @@ const Formulario = () => {
           </form>
         </div>
         <div className="card__button-panel">
-          <button className="card__button-panel__button" type="submit" onClick={handleSubmit}>
+          <button
+            className="card__button-panel__button"
+            type="submit"
+            onClick={handleSubmit}
+          >
             Guardar
           </button>
-          <button className="card__button-panel__button" type="button" onClick={handleCancel}>
+          {editando ? (
+            <button
+              className="card__button-panel__button"
+              type="button"
+              onClick={eliminar}
+            >
+              Eliminar
+            </button>
+          ) : (
+            <></>
+          )}
+          <button
+            className="card__button-panel__button"
+            type="button"
+            onClick={handleCancel}
+          >
             Cancelar
           </button>
         </div>

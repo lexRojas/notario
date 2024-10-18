@@ -289,14 +289,16 @@ BLOQUE: CARD
   margin-top: 2px;
 }
 
+/*-------------------------
+BLOQUE: REPORTE      
+-------------------------*/
 .report-container {
   height: 100dvh;
   width: 100dvw;
   font-size: 5px;
   background-color: white;
 }
-
-.report__logo-container {
+.report-container__logo-container {
   float: right;
   position: relative;
   top: 15px;
@@ -305,29 +307,27 @@ BLOQUE: CARD
   width: 90px;
   height: 100px;
 }
-.report__logo-container img {
+.report-container__logo-container img {
   height: 95%;
 }
-
-.indice {
+.report-container__encabezado {
   text-align: center;
   padding-top: 30px;
 }
-.indice h2 {
+.report-container__encabezado h2 {
   font-size: large;
 }
-.indice div {
+.report-container__encabezado div {
   display: flex;
   width: 90%;
   margin: auto;
   justify-content: space-between;
 }
-.indice div p {
+.report-container__encabezado div p {
   display: inline;
   width: 100px;
 }
-
-.report-footer {
+.report-container__footer {
   display: flex;
   margin: auto;
   margin-top: 50px;
@@ -335,17 +335,20 @@ BLOQUE: CARD
   flex-direction: row;
   justify-content: flex-end;
 }
-.report-footer .firmas {
+.report-container__footer .firmas {
   display: block;
   width: 200px;
   text-align: center;
 }
-.report-footer .linea {
+.report-container__footer .linea {
   background-color: #000;
   height: 2px;
   width: 200px;
 }
 
+/*-------------------------
+BLOQUE: TABLA DEL INDICE REPORTE     
+-------------------------*/
 .report-table {
   width: 100%;
   border: 1px solid #000;
@@ -370,7 +373,23 @@ BLOQUE: CARD
 .report-table tr:nth-child(even) {
   background-color: rgb(240, 242, 243);
 }
+.report-table--col-170px {
+  width: 170px;
+}
+.report-table--col-300px {
+  width: 300px;
+}
+.report-table--col-600px {
+  width: 680px;
+}
+.report-table__nocartule-title {
+  font-weight: 600;
+  letter-spacing: 2px;
+}
 
+/*-------------------------
+BLOQUE: TABLA DE VER TARIFAS     
+-------------------------*/
 .table {
   width: 90%;
   border-collapse: collapse;
@@ -410,15 +429,6 @@ BLOQUE: CARD
 .table--text-left {
   text-align: left;
 }
-.table--col-narrow {
-  width: 170px;
-}
-.table--col-wide {
-  width: 300px;
-}
-.table--col-wide-xl {
-  width: 680px;
-}
 .table footer {
   display: flex;
   justify-content: flex-end;
@@ -443,8 +453,4 @@ BLOQUE: CARD
 @page {
   margin: 1.5cm;
   size: 8.5in 13in landscase;
-}
-.nocartule-title {
-  font-weight: 600;
-  letter-spacing: 2px;
 }/*# sourceMappingURL=styles-BEM.css.map */
