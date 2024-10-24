@@ -7,7 +7,7 @@ $color_text_label: darkblue;
 $color_text_label_hover: rgb(255, 238, 0);
 
 $color_text_h1: darkred;
-$color_background_card: white;
+$color_background_card: rgb(231, 225, 213) ;
 $color_button: rgb(20, 20, 59);
 $color_button_texto: white;
 $color_button_hover: rgb(39, 39, 95);
@@ -40,9 +40,9 @@ $color_border_table: rgb(80, 80, 80);
 //Bases de estilos 
 
 %card_base {
+  width: clamp(10dvw,30dvw,90dvw);
   display: flex;
   flex-direction: column;
-  max-width: 100dvw;
   margin: auto;
   background: $color_background_card;
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
@@ -54,6 +54,16 @@ $color_border_table: rgb(80, 80, 80);
   overflow: auto;
 }
 
+
+@media (width <= 400px) {
+  %card_base {
+    width: 100%
+    
+  }
+    
+}
+
+
 %input-group-base {
   display: flex;
   flex-grow: 1;
@@ -61,7 +71,7 @@ $color_border_table: rgb(80, 80, 80);
   color: $color_text_label;
   flex-direction: column;
   flex-basis: 50px;
-  min-width: 100%;
+  
   padding: 0.2rem 1rem;
 }
 
@@ -95,7 +105,7 @@ $color_border_table: rgb(80, 80, 80);
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
-  min-width: 100%;
+  max-width: 100%;
 }
 
 %card__button-panel-base {
@@ -149,11 +159,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 1px;
+  padding: 10px;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgba(0, 0, 0, 0.534);
   min-height: 100dvh;
   min-width: 100dvw;
+  width: 100dvw;
+  height: 100dvh;
   justify-items: center;
   align-items: center;
 }
@@ -224,7 +236,6 @@ BLOQUE: CARD
     @extend %card_body-base;
     &--calculator {
       flex-direction: column;
-      width: 25rem;
     }
   }
 
@@ -237,27 +248,28 @@ BLOQUE: CARD
 
   // MODIFICADOR --LOGIN
   &--login {
-    max-height: 70dvh;
+    // max-height: clamp(50dvh,70dvh,100dvh);
     &__header {
       img {
         margin: auto;
-        width: 35%;
+        width: clamp(10%,35%,50%);
         animation: heartbeat 1s infinite;
         box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
       }
     }
 
     &__body {
-      max-width: 15rem;
+      max-width: 100%;
+      flex-direction: column;
     }
   }
 
   // MODIFICADOR --MENU
   &--menu {
-    max-height: 70dvh;
+    max-height: 80dvh;
 
     &__body {
-      max-width: 30rem;
+      max-width: 40rem;
     }
     &__menu-item {
       width: 7rem;
@@ -286,11 +298,14 @@ BLOQUE: CARD
   }
 
   &--form-indice {
-    max-height: 90dvh;
+    
     max-width: 35rem;
+    height: 100%;
+    overflow-y: auto;
 
     &__body {
       &__form-layout {
+        max-height: 90%;
         display: grid;
         grid-template-columns: repeat(3, minmax(50px, 1fr));
         gap: 2px 2px;

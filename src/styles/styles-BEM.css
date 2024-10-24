@@ -14,11 +14,11 @@
   }
 }
 .card {
+  width: 30dvw;
   display: flex;
   flex-direction: column;
-  max-width: 100dvw;
   margin: auto;
-  background: white;
+  background: rgb(231, 225, 213);
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(2.5px);
@@ -28,6 +28,11 @@
   overflow: auto;
 }
 
+@media (width <= 400px) {
+  .card {
+    width: 100%;
+  }
+}
 .card__input-group {
   display: flex;
   flex-grow: 1;
@@ -35,7 +40,6 @@
   color: darkblue;
   flex-direction: column;
   flex-basis: 50px;
-  min-width: 100%;
   padding: 0.2rem 1rem;
 }
 
@@ -69,7 +73,7 @@
   flex-wrap: wrap;
   justify-content: center;
   padding: 0;
-  min-width: 100%;
+  max-width: 100%;
 }
 
 .card__button-panel {
@@ -120,11 +124,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 1px;
+  padding: 10px;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.507);
+  background-color: rgba(0, 0, 0, 0.534);
   min-height: 100dvh;
   min-width: 100dvw;
+  width: 100dvw;
+  height: 100dvh;
   justify-items: center;
   align-items: center;
 }
@@ -168,10 +174,6 @@ BLOQUE: CARD
 }
 .card__body--calculator {
   flex-direction: column;
-  width: 25rem;
-}
-.card--login {
-  max-height: 70dvh;
 }
 .card--login__header img {
   margin: auto;
@@ -180,13 +182,14 @@ BLOQUE: CARD
   box-shadow: 0 0 20px rgba(255, 0, 0, 0.9);
 }
 .card--login__body {
-  max-width: 15rem;
+  max-width: 100%;
+  flex-direction: column;
 }
 .card--menu {
-  max-height: 70dvh;
+  max-height: 80dvh;
 }
 .card--menu__body {
-  max-width: 30rem;
+  max-width: 40rem;
 }
 .card--menu__menu-item {
   width: 7rem;
@@ -210,10 +213,12 @@ BLOQUE: CARD
   max-width: 25rem;
 }
 .card--form-indice {
-  max-height: 90dvh;
   max-width: 35rem;
+  height: 100%;
+  overflow-y: auto;
 }
 .card--form-indice__body__form-layout {
+  max-height: 90%;
   display: grid;
   grid-template-columns: repeat(3, minmax(50px, 1fr));
   gap: 2px 2px;
