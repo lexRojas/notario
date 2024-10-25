@@ -55,7 +55,7 @@ export const IndiceBrowser = (props) => {
               <table>
                 <thead className="tabla-head">
                   <tr>
-                    <th>#ECS</th>
+                    <th>#</th>
                     <th>ACTO O CONTRATO</th>
                     <th>PARTES</th>
                   </tr>

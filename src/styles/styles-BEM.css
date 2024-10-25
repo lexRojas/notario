@@ -222,7 +222,7 @@ BLOQUE: CARD
   grid-template-columns: repeat(3, minmax(50px, 1fr));
   gap: 2px 2px;
   grid-auto-flow: row;
-  grid-template-areas: "tomo blank boton_load_index" "escritura blank ." "folios folios folios" "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero blank3 blank4";
+  grid-template-areas: "tomo blank boton_load_index" "escritura blank ." "folios folios folios" "lugar lugar lugar" "fecha fecha firmas" "hora minutos blank2" "partes partes partes" "contrato contrato contrato" "entero tomo_reg asiento_reg";
 }
 .card--form-indice__body__form-layout .folios {
   display: grid;
@@ -287,6 +287,12 @@ BLOQUE: CARD
 }
 .card--form-indice__body__form-layout .entero {
   grid-area: entero;
+}
+.card--form-indice__body__form-layout .tomo_reg {
+  grid-area: tomo_reg;
+}
+.card--form-indice__body__form-layout .asiento_reg {
+  grid-area: asiento_reg;
 }
 .card--form-indice__body__form-layout .form__errorLabel {
   color: red;

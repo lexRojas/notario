@@ -42,6 +42,7 @@ $color_border_table: rgb(80, 80, 80);
 %card_base {
   width: clamp(10dvw,30dvw,90dvw);
   display: flex;
+  
   flex-direction: column;
   margin: auto;
   background: $color_background_card;
@@ -319,7 +320,7 @@ BLOQUE: CARD
           "hora minutos blank2"
           "partes partes partes"
           "contrato contrato contrato"
-          "entero blank3 blank4";
+          "entero tomo_reg asiento_reg";
 
         .folios {
           display: grid;
@@ -403,6 +404,13 @@ BLOQUE: CARD
 
         .entero {
           grid-area: entero;
+        }
+
+        .tomo_reg{
+          grid-area: tomo_reg;  
+        } 
+        .asiento_reg{
+          grid-area: asiento_reg;  
         }
 
         .form__errorLabel {

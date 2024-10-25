@@ -49,6 +49,8 @@ const Formulario = () => {
       entero: "",
       firmas: "1",
       lugar: "",
+      asiento: "",
+      tomo_registro: ""
     });
 
     setfieldDisable(false);
@@ -75,6 +77,8 @@ const Formulario = () => {
       entero: registro.entero,
       firmas: registro.firmas,
       lugar: registro.lugar,
+      asiento: registro.asiento,
+      tomo_registro: registro.tomo_registro
     };
 
     setFormData(miRegistro);
@@ -362,6 +366,24 @@ const Formulario = () => {
                 type="text"
                 name="entero"
                 value={formData.entero}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="card__input-group tomo_reg">
+              <label>Tomo RN:</label>
+              <input
+                type="text"
+                name="tomo_registro"
+                value={formData.tomo_registro}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="card__input-group asiento_reg">
+              <label>Asiento RN:</label>
+              <input
+                type="text"
+                name="asiento"
+                value={formData.asiento}
                 onChange={handleChange}
               />
             </div>
